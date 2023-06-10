@@ -1,5 +1,8 @@
-export interface IJs {
-    id : number;
-    value : string;
-    valueCompare : string;
+export interface IJsBasic {
+  id: number;
+  value: string;
+}
+
+export interface IJs extends IJsBasic {
+  valueCompare: string;
 }
