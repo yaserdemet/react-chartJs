@@ -1,13 +1,11 @@
-import { Grid, Card,  CardHeader } from '@mui/material';
+import { Grid, Card, CardHeader,Accordion, Typography, AccordionSummary, AccordionDetails } from '@mui/material';
 import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { data, data2, data3 } from './datas';
 import { IJs } from './types/js-types';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 function UsefullJs() {
   useEffect(() => {
@@ -69,6 +67,15 @@ function UsefullJs() {
                 ))}
               </code>
             </pre>
+            <Accordion aria-controls="panel1a-content" id="panel1a-header">
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>Explanations</AccordionSummary>
+              <AccordionDetails>
+                <Typography variant='button'>
+                Remember : You can think just the last items in array like array[-1] but this not
+                works
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </Card>
         </Grid>
       </Grid>
