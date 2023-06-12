@@ -40,3 +40,10 @@ export const data3 = [{id : 3, label : `const array = [10,20,30,40,50]
 const lastItem = array.slice(-1) // 50
 const lastItems = array.slice(-2) // 40,50
 ` }]
+
+export const data4 = [{id : 4, label : `import Sidebar from "../../../components/sidebar/Sidebar";
+import Navbar from "../../../components/navbar/Navbar"; 
+// To import like this
+import Sidebar from "components/sidebar/Sidebar";
+import Navbar from "components/navbar/Navbar";
+`}]
