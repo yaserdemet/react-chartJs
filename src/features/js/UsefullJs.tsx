@@ -11,20 +11,14 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2, data3, data4 } from './datas';
+import { config, data, data2, data3, data4, data5, env } from './datas';
 import { IJs } from './types/js-types';
 
 function UsefullJs() {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
-  const config = `
-  {
-    "compilerOptions": {
-    "baseUrl": "./src"
-    }
-    }
-  `;
+ 
   return (
     <>
       <Grid container spacing={4}>
@@ -112,6 +106,32 @@ function UsefullJs() {
                 </Typography>
                   <code  data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
                     {config}
+                  </code>
+              </AccordionDetails>
+            </Accordion>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Card>
+            <CardHeader
+              title=".env file"
+              subheader="call your api key from .env and hide your codes"
+            />
+            <pre className="line-numbers">
+              <code data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
+                {data5.map((item) => (
+                  <>{item.label}</>
+                ))}
+              </code>
+            </pre>
+            <Accordion aria-controls="panel1a-content" id="panel1a-header">
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>Explanations</AccordionSummary>
+              <AccordionDetails>
+                <Typography variant="body2">
+                 To hide your codes when user inspect add this code block in .env
+                </Typography>
+                  <code  data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
+                    {env}
                   </code>
               </AccordionDetails>
             </Accordion>
