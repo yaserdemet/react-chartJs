@@ -13,12 +13,12 @@ export default function PageTwo() {
   return (
     <>
       <Helmet>
-        <title> Page Two | Minimal UI</title>
+        <title> JavaScript | Usefull Notes</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
-          Page Two
+          JavaScript
         </Typography>
 
       <UsefullJs />

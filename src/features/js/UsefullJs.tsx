@@ -7,18 +7,19 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
+import { HighlightCard } from 'src/components/usefullFrontendCard/HighlightCard';
 import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { config, data, data2, data3, data4, data5, env } from './datas';
+import { config, data, data2, data3, data4, data5, data6, env } from './datas';
 import { IJs } from './types/js-types';
 
 function UsefullJs() {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
- 
+
   return (
     <>
       <Grid container spacing={4}>
@@ -104,9 +105,9 @@ function UsefullJs() {
                 <Typography variant="button">
                   Create jsconfig.json file and add this code block
                 </Typography>
-                  <code  data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
-                    {config}
-                  </code>
+                <code data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
+                  {config}
+                </code>
               </AccordionDetails>
             </Accordion>
           </Card>
@@ -128,15 +129,21 @@ function UsefullJs() {
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>Explanations</AccordionSummary>
               <AccordionDetails>
                 <Typography variant="body2">
-                 To hide your codes when user inspect add this code block in .env
+                  To hide your codes when user inspect add this code block in .env
                 </Typography>
-                  <code  data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
-                    {env}
-                  </code>
+                <code data-prismjs-copy="Copy the JavaScript snippet!" className="language-js">
+                  {env}
+                </code>
               </AccordionDetails>
             </Accordion>
           </Card>
         </Grid>
+        <HighlightCard
+          data={data6}
+          Subheader="To Check more than one conditon use includes method"
+          Title="Multiple Condition Checking"
+          explanation='This return true and execute if block if value which comes as parametre in array'
+        />
       </Grid>
     </>
   );

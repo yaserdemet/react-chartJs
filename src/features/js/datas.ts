@@ -71,7 +71,24 @@ export const data5 = [
     and use your api key in file like 
     process.env.REACT_APP_HOST_API_KEY`,
   },
-  
+];
+
+export const data6 = [
+  {
+    id: 6,
+    label: `
+  // Longhand
+  if(value === 1 || value === "one" || value === 2 
+  || value === "two"){
+    // Execute some code
+  }
+
+  // Shorthand
+  if([1, "one", 2, "two"].includes(value)){
+    // Execute some code
+  }
+  `,
+  },
 ];
 
 export const config = `
@@ -81,4 +98,4 @@ export const config = `
   }
   }
 `;
-export const env = `GENERATE_SOURCEMAP=false`
+export const env = `GENERATE_SOURCEMAP=false`;
