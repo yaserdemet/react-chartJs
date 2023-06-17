@@ -27,6 +27,8 @@ import { ThemeSettings, SettingsProvider } from './components/settings';
 // https://docs.minimals.cc/authentication/ts-version
 
 import { AuthProvider } from './auth/JwtContext';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // ----------------------------------------------------------------------
 
