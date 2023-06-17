@@ -13,12 +13,12 @@ export default function PageOne() {
   return (
     <>
       <Helmet>
-        <title> Page One | Minimal UI</title>
+        <title> ChartJs | Usefull Frontend</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
-          Page One
+          ChartJs
         </Typography>
 
         <Activities />

@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 // @mui
 import { Container, Typography } from '@mui/material';
 // components
+import Header from 'src/features/js/Header';
 import UsefullJs from 'src/features/js/UsefullJs';
 import { useSettingsContext } from '../components/settings';
 
@@ -20,8 +21,8 @@ export default function PageTwo() {
         <Typography variant="h3" component="h1" paragraph>
           JavaScript
         </Typography>
-
-      <UsefullJs />
+        <Header />
+        <UsefullJs />
       </Container>
     </>
   );
