@@ -12,7 +12,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { config, data, data2, data3, data4, data5, data6, env } from './datas';
+import { config, data, data2, data3, data4, data5, data6, data7, env } from './datas';
 import { IJs } from './types/js-types';
 
 function UsefullJs() {
@@ -142,7 +142,14 @@ function UsefullJs() {
           data={data6}
           Subheader="To Check more than one conditon use includes method"
           Title="Multiple Condition Checking"
-          explanation='This return true and execute if block if value which comes as parametre in array'
+          explanation="This return true and execute if block if value which comes as parametre in array"
+        />
+        <HighlightCard
+          data={data7}
+          Title="Format Date"
+          Subheader="Make more readable date"
+          explanation="In JavaScript, the Epoch time is typically represented as the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC. This value is commonly referred to as Unix time or POSIX time.
+          To format an Epoch time into a human-readable date format in JavaScript, you can use the Date object."
         />
       </Grid>
     </>

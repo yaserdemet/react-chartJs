@@ -91,6 +91,31 @@ export const data6 = [
   },
 ];
 
+export const data7 = [
+  {
+    id: 7,
+    label: `const epochTime = 1623931182000;
+const date = new Date(epochTime); 
+// Thu Jun 17 2021 14:59:42 GMT+0300 (GMT+03:00)
+const formattedDate = date.toLocaleString(); 
+// 17.06.2021 14:59:42
+
+// And also we can convert date according to countries
+const formatDateToCountry = (date, language = "tr-TR")=>{
+  return new Date(date).toLocaleString(language, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  });
+};
+// formatDateToCountry(1623931182000) // 17 Haziran 2021
+  `,
+  },
+];
+
 export const config = `
 {
   "compilerOptions": {
