@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { Container, Typography } from '@mui/material';
-import Activities from 'src/features/Activities';
+import Activities from 'src/features/charts/Activities';
 // components
 import { useSettingsContext } from '../components/settings';
 
