@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import ApexCharts from 'apexcharts';
 import { _analyticTraffic } from 'src/_mock/arrays';
-import { Grid, Card } from '@mui/material';
+import { Grid, Card, Typography, Stack, Icon } from '@mui/material';
 import Chart from 'react-apexcharts';
+import Iconify from 'src/components/iconify/Iconify';
+import { alpha } from '@mui/material/styles';
 
 const Activities = () => {
   const options = {
@@ -70,8 +72,75 @@ const Activities = () => {
       },
     ],
   });
+
+  const trending = [
+    {
+      id: 1,
+      title: 'Total Active Users',
+      percentage: '2.6',
+      numbers: 18.765,
+      icon: 'skill-icons:react-dark',
+    },
+    {
+      id: 1,
+      title: 'Total Installed',
+      percentage: '1.6',
+      numbers: 4.876,
+      icon: 'logos:typescript-icon',
+    },
+    {
+      id: 1,
+      title: 'Total Downloads',
+      percentage: '-0.6',
+      numbers: 678,
+      icon: 'skill-icons:javascript',
+    },
+  ];
   return (
     <Grid container spacing={4}>
+      {trending.map((item: any) => (
+        <Grid item xs={12} md={4}>
+          <Card sx={{ display: 'flex', alignItems: 'center', p: 3 }}>
+            <Stack width="100%" justifyContent="space-between" alignItems="center" direction="row" spacing={4} display="flex">
+              <Stack display="flex" spacing={2} direction="column">
+                <Stack>
+                  <Typography variant="subtitle2">{item.title}</Typography>
+                </Stack>
+                <Stack spacing={2}>
+                  <Stack alignItems="center" direction="row" spacing={1}>
+                    <Iconify
+                      icon={
+                        parseFloat(item.percentage) < 0
+                          ? 'eva:trending-down-fill'
+                          : 'eva:trending-up-fill'
+                      }
+                      sx={{
+                        mr: 1,
+                        p: 0.5,
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        color: 'success.main',
+                        bgcolor: (theme) => alpha(theme.palette.success.main, 0.16),
+                        ...(parseFloat(item.percentage) < 0 && {
+                          color: 'error.main',
+                          bgcolor: (theme) => alpha(theme.palette.error.main, 0.16),
+                        }),
+                      }}
+                    />
+                    <Typography variant="subtitle2">{item.percentage} % </Typography>
+                  </Stack>
+                  <Typography variant="h3">{item.numbers}</Typography>
+                </Stack>
+              </Stack>
+              <Stack>
+                <Iconify width={48} icon={item.icon} />
+              </Stack>
+            </Stack>
+          </Card>
+        </Grid>
+      ))}
+
       <Grid item xs={12} md={6}>
         <Card>
           <Chart
