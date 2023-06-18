@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ApexCharts from 'apexcharts';
 import { _analyticTraffic } from 'src/_mock/arrays';
 import { Grid, Card, Typography, Stack, Icon } from '@mui/material';
 import Chart from 'react-apexcharts';
 import Iconify from 'src/components/iconify/Iconify';
 import { alpha } from '@mui/material/styles';
+import { useSnackbar } from '../../components/snackbar';
 
 const Activities = () => {
+  const { enqueueSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    setTimeout(() => {
+      enqueueSnackbar(
+        <>
+          <Iconify sx={{ mr: 1 }} icon="emojione:cookie" /> We use cookies to improve your browsing
+          experience,{' '}
+        </>,
+        { variant: 'info' }
+      );
+    }, 4096);
+  });
   const options = {
     xaxis: {
       categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -101,7 +115,14 @@ const Activities = () => {
       {trending.map((item: any) => (
         <Grid item xs={12} md={4}>
           <Card sx={{ display: 'flex', alignItems: 'center', p: 3 }}>
-            <Stack width="100%" justifyContent="space-between" alignItems="center" direction="row" spacing={4} display="flex">
+            <Stack
+              width="100%"
+              justifyContent="space-between"
+              alignItems="center"
+              direction="row"
+              spacing={4}
+              display="flex"
+            >
               <Stack display="flex" spacing={2} direction="column">
                 <Stack>
                   <Typography variant="subtitle2">{item.title}</Typography>
