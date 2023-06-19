@@ -18,6 +18,11 @@ import { IJs } from './types/js-types';
 function UsefullJs() {
   useEffect(() => {
     Prism.highlightAll();
+
+    return () => {
+      // Clean up the highlighting when the component unmounts
+      Prism.highlightAllUnder(document, false);
+    };
   }, []);
 
   return (
