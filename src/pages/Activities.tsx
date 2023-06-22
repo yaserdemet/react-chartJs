@@ -12,7 +12,7 @@ export default function PageOne() {
   const { themeStretch } = useSettingsContext();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2048);
+    setTimeout(() => setLoading(false), 1024);
   });
 
   return (

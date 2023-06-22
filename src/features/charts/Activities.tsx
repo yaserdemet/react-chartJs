@@ -94,6 +94,7 @@ const Activities = () => {
       percentage: '2.6',
       numbers: 18.765,
       icon: 'skill-icons:react-dark',
+      chartId: 55,
     },
     {
       id: 1,
@@ -101,6 +102,7 @@ const Activities = () => {
       percentage: '1.6',
       numbers: 4.876,
       icon: 'logos:typescript-icon',
+      chartId: 76,
     },
     {
       id: 1,
@@ -108,55 +110,151 @@ const Activities = () => {
       percentage: '-0.6',
       numbers: 678,
       icon: 'skill-icons:javascript',
+      chartId: 23,
     },
   ];
+  const optionsBar = {
+    chart: {
+      height: 280,
+      type: 'radialBar',
+    },
+
+    series: [67],
+
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          margin: 15,
+          size: '70%',
+        },
+
+        dataLabels: {
+          showOn: 'always',
+          name: {
+            offsetY: -10,
+            show: true,
+            color: '#888',
+            fontSize: '13px',
+          },
+          value: {
+            color: '#111',
+            fontSize: '30px',
+            show: true,
+          },
+        },
+      },
+    },
+
+    stroke: {
+      lineCap: 'round',
+    },
+    labels: ['Progress'],
+  };
   return (
     <Grid container spacing={4}>
       {trending.map((item: any) => (
         <Grid item xs={12} md={4}>
           <Card sx={{ display: 'flex', alignItems: 'center', p: 3 }}>
-            <Stack
-              width="100%"
-              justifyContent="space-between"
-              alignItems="center"
-              direction="row"
-              spacing={4}
-              display="flex"
-            >
-              <Stack display="flex" spacing={2} direction="column">
-                <Stack>
-                  <Typography variant="subtitle2">{item.title}</Typography>
-                </Stack>
-                <Stack spacing={2}>
-                  <Stack alignItems="center" direction="row" spacing={1}>
-                    <Iconify
-                      icon={
-                        parseFloat(item.percentage) < 0
-                          ? 'eva:trending-down-fill'
-                          : 'eva:trending-up-fill'
-                      }
-                      sx={{
-                        mr: 1,
-                        p: 0.5,
-                        width: 24,
-                        height: 24,
-                        borderRadius: '50%',
-                        color: 'success.main',
-                        bgcolor: (theme) => alpha(theme.palette.success.main, 0.16),
-                        ...(parseFloat(item.percentage) < 0 && {
-                          color: 'error.main',
-                          bgcolor: (theme) => alpha(theme.palette.error.main, 0.16),
-                        }),
-                      }}
-                    />
-                    <Typography variant="subtitle2">{item.percentage} % </Typography>
+            <Stack>
+              <Stack
+                width="100%"
+                justifyContent="space-between"
+                alignItems="center"
+                direction="row"
+                spacing={4}
+                display="flex"
+              >
+                <Stack display="flex" spacing={2} direction="column">
+                  <Stack>
+                    <Typography variant="subtitle2">{item.title}</Typography>
                   </Stack>
-                  <Typography variant="h3">{item.numbers}</Typography>
+                  <Stack spacing={2}>
+                    <Stack alignItems="center" direction="row" spacing={1}>
+                      <Iconify
+                        icon={
+                          parseFloat(item.percentage) < 0
+                            ? 'eva:trending-down-fill'
+                            : 'eva:trending-up-fill'
+                        }
+                        sx={{
+                          mr: 1,
+                          p: 0.5,
+                          width: 24,
+                          height: 24,
+                          borderRadius: '50%',
+                          color: 'success.main',
+                          bgcolor: (theme) => alpha(theme.palette.success.main, 0.16),
+                          ...(parseFloat(item.percentage) < 0 && {
+                            color: 'error.main',
+                            bgcolor: (theme) => alpha(theme.palette.error.main, 0.16),
+                          }),
+                        }}
+                      />
+                      <Typography variant="subtitle2">{item.percentage} % </Typography>
+                    </Stack>
+                    <Typography variant="h3">{item.numbers}</Typography>
+                  </Stack>
+                </Stack>
+                <Stack>
+                  <Iconify width={48} icon={item.icon} />
                 </Stack>
               </Stack>
-              <Stack>
-                <Iconify width={48} icon={item.icon} />
-              </Stack>
+              <Chart
+                series={[item.chartId]}
+                type="radialBar"
+                options={{
+                  chart: {
+                    width: 20,
+                    type: 'radialBar',
+                  },
+                  stroke: {
+                    lineCap: "round"
+                  },
+                  labels: ["Progress"],
+                  fill: {
+                    type: 'gradient',
+                    gradient: {
+                      shade: 'dark',
+                      type: 'vertical',
+                      gradientToColors: ['#87D4F9'],
+                      stops: [0, 100],
+                    },
+                  },
+                  colors: ['#20E647'],
+                  plotOptions: {
+                    
+                    radialBar: {
+                      hollow: {
+                        margin: 15,
+                        size: '75%',
+                        background: '#293450',
+                      },
+                      track: {
+                        dropShadow: {
+                          enabled: true,
+                          top: 2,
+                          left: 0,
+                          blur: 4,
+                          opacity: 0.15,
+                        },
+                      },
+
+                      dataLabels: {
+                        name: {
+                          offsetY: -10,
+                          color: '#fff',
+                          fontSize: '13px',
+                        },
+                        value: {
+                          color: "#fff",
+                          fontSize: "30px",
+                          show: true
+                        }
+                      },
+                    },
+                  },
+                }}
+              />
             </Stack>
           </Card>
         </Grid>
