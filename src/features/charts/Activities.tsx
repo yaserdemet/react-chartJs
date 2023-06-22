@@ -208,9 +208,9 @@ const Activities = () => {
                     type: 'radialBar',
                   },
                   stroke: {
-                    lineCap: "round"
+                    lineCap: 'round',
                   },
-                  labels: ["Progress"],
+                  labels: ['Progress'],
                   fill: {
                     type: 'gradient',
                     gradient: {
@@ -222,7 +222,6 @@ const Activities = () => {
                   },
                   colors: ['#20E647'],
                   plotOptions: {
-                    
                     radialBar: {
                       hollow: {
                         margin: 15,
@@ -246,10 +245,10 @@ const Activities = () => {
                           fontSize: '13px',
                         },
                         value: {
-                          color: "#fff",
-                          fontSize: "30px",
-                          show: true
-                        }
+                          color: '#fff',
+                          fontSize: '30px',
+                          show: true,
+                        },
                       },
                     },
                   },
