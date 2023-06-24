@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Card, Avatar, Typography } from '@mui/material';
+import { Stack, Card, Avatar, Typography, Box } from '@mui/material';
 import { blue, blueGrey } from '@mui/material/colors';
 import { CustomAvatar } from 'src/components/custom-avatar';
 import Tabs from '@mui/material/Tabs';
@@ -7,7 +7,6 @@ import Tab from '@mui/material/Tab';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
-import PhoneMissedIcon from '@mui/icons-material/PhoneMissed';
 import { useAuthContext } from 'src/auth/useAuthContext';
 import User from '../../assets/illustrations/overlay_2.jpg';
 
@@ -46,25 +45,27 @@ function Header() {
           {user?.role}
         </Typography>
       </Card>
-      <Tabs
-        sx={{
-          width: 1,
+      <>
+        <Tabs
+          sx={{
+            width: 1,
 
-          '& .MuiTabs-flexContainer': {
-            justifyContent: {
-              sm: 'center',
-              md: 'flex-end',
+            '& .MuiTabs-flexContainer': {
+              justifyContent: {
+                sm: 'center',
+                md: 'flex-end',
+              },
             },
-          },
-        }}
-        value={value}
-        onChange={handleChange}
-        aria-label="icon position tabs example"
-      >
-        <Tab icon={<PhoneMissedIcon />} iconPosition="start" label="start" />
-        <Tab icon={<PhoneMissedIcon />} iconPosition="start" label="start" />
-        <Tab icon={<PhoneMissedIcon />} iconPosition="start" label="start" />
-      </Tabs>
+          }}
+          value={value}
+          onChange={handleChange}
+          aria-label="icon position tabs example"
+        >
+          <Tab icon={<PhoneIcon />} iconPosition="start" label="Profile" />
+          <Tab icon={<PersonPinIcon />} iconPosition="start" label="Friends" />
+          <Tab icon={<FavoriteIcon />} iconPosition="start" label="Favorite" />
+        </Tabs>
+      </>
     </>
   );
 }
