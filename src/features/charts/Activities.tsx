@@ -286,6 +286,7 @@ const Activities = () => {
         </Card>
       </Grid>
             git feature deneme silindi.
+            burası feature  branch inden geldi
       <Grid item xs={12} md={6}>
         <Card>
           <Chart options={options} series={series} type="area" />
