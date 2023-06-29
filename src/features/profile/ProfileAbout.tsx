@@ -39,23 +39,23 @@ function ProfileAbout() {
                 <Typography variant="body2">
                   Live at &nbsp;
                   <Link component="span" variant="subtitle2" color="text.primary">
-                    dwadawd
+                    Ankara
                   </Link>
                 </Typography>
               </Stack>
 
               <Stack direction="row">
                 <StyledIcon icon="eva:email-fill" />
-                <Typography variant="body2">dwadawd</Typography>
+                <Typography variant="body2">ddemety@hotmail.com</Typography>
               </Stack>
 
               <Stack direction="row">
                 <StyledIcon icon="ic:round-business-center" />
 
                 <Typography variant="body2">
-                  dawdwadadw at &nbsp;
+                  React Developer &nbsp;
                   <Link component="span" variant="subtitle2" color="text.primary">
-                    dawdwad
+                    Elegant Software
                   </Link>
                 </Typography>
               </Stack>
@@ -66,7 +66,7 @@ function ProfileAbout() {
                 <Typography variant="body2">
                   Studied at &nbsp;
                   <Link component="span" variant="subtitle2" color="text.primary">
-                    dawdawd
+                    Turkish Air Forces
                   </Link>
                 </Typography>
               </Stack>

@@ -10,7 +10,7 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import { useAuthContext } from 'src/auth/useAuthContext';
 import User from '../../assets/illustrations/overlay_2.jpg';
 
-function Header() {
+function Header({currentTab, setCurrentTab} : any) {
   const { user, logout } = useAuthContext();
   const [value, setValue] = React.useState(0);
 
@@ -61,9 +61,9 @@ function Header() {
           onChange={handleChange}
           aria-label="icon position tabs example"
         >
-          <Tab icon={<PhoneIcon />} iconPosition="start" label="Profile" />
-          <Tab icon={<PersonPinIcon />} iconPosition="start" label="Friends" />
-          <Tab icon={<FavoriteIcon />} iconPosition="start" label="Favorite" />
+          <Tab onClick={() => setCurrentTab("Profile")} icon={<PhoneIcon />} iconPosition="start" label="Profile" />
+          <Tab onClick={() => setCurrentTab("Friends")} icon={<PersonPinIcon />} iconPosition="start" label="Friends" />
+          <Tab onClick={() => setCurrentTab("Profile")} icon={<FavoriteIcon />} iconPosition="start" label="Favorite" />
         </Tabs>
       </>
     </>
