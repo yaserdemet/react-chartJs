@@ -63,7 +63,7 @@ function Header({currentTab, setCurrentTab} : any) {
         >
           <Tab onClick={() => setCurrentTab("Profile")} icon={<PhoneIcon />} iconPosition="start" label="Profile" />
           <Tab onClick={() => setCurrentTab("Friends")} icon={<PersonPinIcon />} iconPosition="start" label="Friends" />
-          <Tab onClick={() => setCurrentTab("Profile")} icon={<FavoriteIcon />} iconPosition="start" label="Favorite" />
+          <Tab onClick={() => setCurrentTab("Followers")} icon={<FavoriteIcon />} iconPosition="start" label="Favorite" />
         </Tabs>
       </>
     </>

@@ -6,8 +6,10 @@ import { Container, Typography } from '@mui/material';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
 import Header from 'src/features/profile/Header';
 import ProfileInfo from 'src/features/profile/ProfileFollowingCount';
-import Friends from 'src/features/profile/Friends';
+import Friends from 'src/features/profile/Followers';
 import ProfileAbout from 'src/features/profile/ProfileAbout';
+import { _userFriends } from 'src/_mock/arrays';
+import ProfileFriends from 'src/features/profile/ProfileFriends';
 import Social from 'src/features/profile/Social';
 import { useSettingsContext } from '../components/settings';
 
@@ -16,6 +18,7 @@ import { useSettingsContext } from '../components/settings';
 export default function PageFour() {
   const { themeStretch } = useSettingsContext();
   const [currentTab, setCurrentTab] = useState('Profile');
+  const [searchFriends, setSearchFriends] = useState('');
 
   return (
     <>
@@ -49,6 +52,15 @@ export default function PageFour() {
           </>
         )}
         {currentTab === 'Friends' && <Friends />}
+        {currentTab === 'Followers' && (
+          <ProfileFriends
+            friends={_userFriends}
+            searchFriends={searchFriends}
+            onSearchFriends={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setSearchFriends(event.target.value)
+            }
+          />
+        )}
       </Container>
     </>
   );
