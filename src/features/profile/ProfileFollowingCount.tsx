@@ -4,9 +4,9 @@ import { Stack, Card, Avatar, Typography, Box, Grid, Divider } from '@mui/materi
 function ProfileInfo() {
   return (
     <>
-      <Grid mt={2} container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <Card sx={{ py: 3, px: 4 }}>
+      <>
+        <>
+          <Card sx={{ py: 3, px: 4, mb : 4 }}>
             <Stack
               display="flex"
               spacing={2}
@@ -30,8 +30,8 @@ function ProfileInfo() {
               </Stack>
             </Stack>
           </Card>
-        </Grid>
-      </Grid>
+        </>
+      </>
     </>
   );
 }

@@ -24,9 +24,9 @@ const StyledIcon = styled(Iconify)(({ theme }) => ({
 function ProfileAbout() {
   return (
     <>
-      <Grid mt={2} container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <Card sx={{ pb: 2, px: 2 }}>
+      <>
+        <>
+          <Card sx={{ pb: 2, px: 2, mb : 4}}>
             <CardHeader title="About" />
             <Stack spacing={2} sx={{ p: 3 }}>
               <Typography variant="body2">
@@ -72,8 +72,8 @@ function ProfileAbout() {
               </Stack>
             </Stack>
           </Card>
-        </Grid>
-      </Grid>
+        </>
+      </>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { useState } from 'react';
-import { Container, Stack, Typography, Box } from '@mui/material';
+import { Container, Stack, Typography, Box, Grid } from '@mui/material';
 // components
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
 import Header from 'src/features/profile/Header';
@@ -49,11 +49,15 @@ export default function PageFour() {
 
         <>
           {currentTab === 'Profile' && (
-            <>
-              <ProfileInfo /> <ProfileAbout />
-              <Social />
-              {/* <ImageSide /> */}
-            </>
+            <Grid mt={4} container spacing={4}>
+              <Grid item  xs={12} md={4}>
+                <ProfileInfo /> <ProfileAbout />
+                <Social />
+              </Grid>
+              <Grid xs={12} md={8} item>
+                <ImageSide />
+              </Grid>
+            </Grid>
           )}
           {currentTab === 'Friends' && <Friends />}
           {currentTab === 'Followers' && (

@@ -6,8 +6,8 @@ import Iconify from 'src/components/iconify/Iconify';
 function Social() {
   return (
     <>
-      <Grid sx={{ mt: 2 }} container spacing={2}>
-        <Grid item xs={12} md={4}>
+      <>
+        <>
           <Card>
             <CardHeader title="Social" />
 
@@ -29,8 +29,8 @@ function Social() {
               ))}
             </Stack>
           </Card>
-        </Grid>
-      </Grid>
+        </>
+      </>
     </>
   );
 }
