@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { useState } from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container, Stack, Typography, Box } from '@mui/material';
 // components
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
 import Header from 'src/features/profile/Header';
@@ -11,6 +11,7 @@ import ProfileAbout from 'src/features/profile/ProfileAbout';
 import { _userFriends } from 'src/_mock/arrays';
 import ProfileFriends from 'src/features/profile/ProfileFriends';
 import Social from 'src/features/profile/Social';
+import ImageSide from 'src/features/profile/ImageSide';
 import { useSettingsContext } from '../components/settings';
 
 // ----------------------------------------------------------------------
@@ -45,22 +46,26 @@ export default function PageFour() {
         />
 
         <Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
-        {currentTab === 'Profile' && (
-          <>
-            <ProfileInfo /> <ProfileAbout />
-            <Social />
-          </>
-        )}
-        {currentTab === 'Friends' && <Friends />}
-        {currentTab === 'Followers' && (
-          <ProfileFriends
-            friends={_userFriends}
-            searchFriends={searchFriends}
-            onSearchFriends={(event: React.ChangeEvent<HTMLInputElement>) =>
-              setSearchFriends(event.target.value)
-            }
-          />
-        )}
+
+        <>
+          {currentTab === 'Profile' && (
+            <>
+              <ProfileInfo /> <ProfileAbout />
+              <Social />
+              {/* <ImageSide /> */}
+            </>
+          )}
+          {currentTab === 'Friends' && <Friends />}
+          {currentTab === 'Followers' && (
+            <ProfileFriends
+              friends={_userFriends}
+              searchFriends={searchFriends}
+              onSearchFriends={(event: React.ChangeEvent<HTMLInputElement>) =>
+                setSearchFriends(event.target.value)
+              }
+            />
+          )}
+        </>
       </Container>
     </>
   );

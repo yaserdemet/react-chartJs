@@ -35,7 +35,6 @@ export default function ProfileFriends({ friends, searchFriends, onSearchFriends
         sx={{ my: 5 }}
       >
         <Typography variant="h4">Friends</Typography>
-
         <CustomTextField
           width={220}
           size="small"
