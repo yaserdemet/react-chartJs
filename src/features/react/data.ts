@@ -1,8 +1,6 @@
-import { IJs } from "../js/types/js-types";
-
 export const data = [
     {
-      id: 7,
+      id: 1,
       label: `useEffect(() => {
   Effect Logic Here
 // Normally when send object to dependencies 
@@ -14,4 +12,4 @@ export const data = [
   ];
 
 
-export const env = `GENERATE_SOURCEMAP=false`;
+// export const env = `GENERATE_SOURCEMAP=false`;
