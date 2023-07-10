@@ -285,8 +285,6 @@ const Activities = () => {
           <Chart series={values.series} options={values.options} type="line" height={350} />
         </Card>
       </Grid>
-            git feature deneme silindi.
-            this comes from develeopment
       <Grid item xs={12} md={6}>
         <Card>
           <Chart options={options} series={series} type="area" />
