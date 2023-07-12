@@ -1,11 +1,5 @@
 import {
   Grid,
-  Card,
-  CardHeader,
-  Accordion,
-  Typography,
-  AccordionSummary,
-  AccordionDetails,
 } from '@mui/material';
 import { HighlightCard } from 'src/components/usefullFrontendCard/HighlightCard';
 import React, { useEffect } from 'react';
@@ -13,7 +7,6 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { data, data2 } from './data';
-import { IJs } from '../js/types/js-types';
 
 function UsefullReact() {
   useEffect(() => {

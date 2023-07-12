@@ -30,5 +30,3 @@ console.log(error);
 `,
   },
 ];
-
-// export const env = `GENERATE_SOURCEMAP=false`;
