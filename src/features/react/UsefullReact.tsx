@@ -12,7 +12,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, env } from './data';
+import { data, data2 } from './data';
 import { IJs } from '../js/types/js-types';
 
 function UsefullReact() {
@@ -39,6 +39,12 @@ function UsefullReact() {
           One way to go around this issue is to stringify the object, and allowing its contents act as strings in the useEffect dependency array, in this case the useEffect would re render only if any of the object properties change. This is more stable than passing an object as dependencies.
           However, this method is not a silver bullet to solving useEffect dependencies issue with object as it would not work for deeply nested objects.
           To solve issues with deeply nested object, you can write your own object comparison logic or use the lodash library."
+        />
+        <HighlightCard
+          data={data2}
+          Title="Send Data with Form Data"
+          Subheader="Generally we send data to backend as JSON format but sometimes need to send with form data. Lets take a look how send data with form data."
+          explanation="First create new form data. Then append to that form data. As string Key and string value."
         />
       </Grid>
     </>
