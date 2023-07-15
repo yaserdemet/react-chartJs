@@ -10,28 +10,68 @@ import { useBattery } from 'react-use';
 import { useSettingsContext } from '../components/settings';
 
 // ----------------------------------------------------------------------
-
+interface ISetting {
+  label: string;
+  setting: string;
+}
 export default function PageFive() {
   const { themeStretch } = useSettingsContext();
   const battery: any = useBattery();
-  const { isSupported, level, charging, dischargingTime, chargingTime } = battery;
+  const {
+    isSupported,
+    level,
+    charging,
+    dischargingTime,
+    platform,
+    appName,
+    chargingTime,
+    hardwareConcurrency,
+    language,
+    cookieEnabled,
+    deviceMemory,
+  } = battery;
   console.log(navigator);
-  const labels = [
-   {
-    label :  'Charge level',
-    setting  :( level * 100).toFixed(0),
-   },
+  const labels: ISetting[] = [
     {
-      label : 'Charging',
-      setting : 
+      label: 'Charge level',
+      setting: (level * 100).toFixed(0),
     },
-    'Discharging time',
-    'Is Online',
-    'hardwareConcurrency',
-    'Languages',
-    'Cookies Enabled',
-    'Browser Platform',
-    'App Name',
+    {
+      label: 'Charging',
+      setting: charging ? 'Yes' : 'No',
+    },
+    {
+      label: 'Discharging time',
+      setting: dischargingTime,
+    },
+    {
+      label: 'Is Online',
+      setting: navigator.onLine ? 'Yes' : 'No',
+    },
+    {
+      label: 'hardwareConcurrency',
+      setting: navigator.hardwareConcurrency,
+    },
+    {
+      label: 'Language',
+      setting: navigator.language,
+    },
+    {
+      label: 'Cookies Enabled',
+      setting: navigator.cookieEnabled,
+    },
+    {
+      label: 'Browser Platform',
+      setting: navigator.platform,
+    },
+    {
+      label: 'App Name',
+      setting: navigator.appName,
+    },
+    // {
+    //   label: 'Memory',
+    //   setting: navigator.deviceMemory,
+    // },
   ];
   return (
     <>
@@ -41,70 +81,17 @@ export default function PageFive() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
-          Page Five
+          Settings
         </Typography>
-
-        <Typography gutterBottom>
-          {/* Display Battery Charge Percentage */}
-          {/* Display Whether Device is charging or not */}
-
-          {/* Display Device Charging time */}
-        </Typography>
-        {/* <Stack direction="column" spacing={4}>
-          <Box>
-            <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button>
-                <strong>Charge level</strong>:&nbsp;&nbsp; <span>{(level * 100).toFixed(0)}%</span>{' '}
-                <br />
-              </Button>
-              <Button>
-                {' '}
-                <strong>Charging</strong>:&nbsp;&nbsp; <span>{charging ? 'Yes' : 'No'}</span> <br />
-              </Button>
-              <Button>
-                <strong>Discharging time</strong>:&nbsp;&nbsp; <span>{dischargingTime}</span>
-              </Button>
-            </ButtonGroup>
-          </Box>
-          <Box>
-            <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button>
-                <strong>Is Online</strong>:&nbsp;&nbsp;{' '}
-                <span>{navigator.onLine ? 'Yes' : 'No'}</span> <br />
-              </Button>
-              <Button>
-                {' '}
-                <strong>hardwareConcurrency</strong>:&nbsp;&nbsp;{' '}
-                <span>{navigator.hardwareConcurrency}</span> <br />
-              </Button>
-              <Button>
-                <strong>Languages</strong>:&nbsp;&nbsp;{' '}
-                <span>{navigator.languages.join(', ')}</span>
-              </Button>
-            </ButtonGroup>
-          </Box>
-          <Box>
-            <ButtonGroup variant="contained" aria-label="outlined primary button group">
-              <Button>
-                <strong>Cookies Enabled</strong>:&nbsp;&nbsp;{' '}
-                <span>{navigator.cookieEnabled ? 'Yes' : 'No'}</span> <br />
-              </Button>
-              <Button>
-                <strong>Browser Platform</strong>:&nbsp;&nbsp; <span>{navigator.platform}</span>{' '}
-                <br />
-              </Button>
-              <Button>
-                <strong>App Name</strong>:&nbsp;&nbsp; <span>{navigator.appName}</span>
-              </Button>
-            </ButtonGroup>
-          </Box>
-        </Stack> */}
         <Stack direction="column" spacing={4}>
-          {labels.map((item: string) => (
-            <>
-              <TextField label={item} variant="standard" />
-            </>
-          ))}
+          {labels.map((item: ISetting) => {
+            const { label, setting } = item;
+            return (
+              <>
+                <TextField label={label} value={setting} />
+              </>
+            );
+          })}
         </Stack>
       </Container>
     </>
