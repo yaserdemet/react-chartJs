@@ -30,7 +30,6 @@ export default function PageFive() {
     cookieEnabled,
     deviceMemory,
   } = battery;
-  console.log(navigator);
   const labels: ISetting[] = [
     {
       label: 'Charge level',
@@ -68,15 +67,21 @@ export default function PageFive() {
       label: 'App Name',
       setting: navigator.appName,
     },
+    {
+      label: 'Product',
+      setting: navigator.product,
+    },
   ];
+  console.log(labels.length);
+
   const tooltips = [
     {
-      id: 1,
-      tool: 'd',
+      id: 9,
+      tool: 'It is responsible for interpreting HTML, CSS, and JavaScript to render web pages.',
     },
     {
-      id: 2,
-      tool: 'dax',
+      id: 4,
+      tool: "property provides information about the number of logical processors available on the user's device. It indicates the number of CPU cores or virtual hyper-threading cores available, which can give an estimate of the device's processing capabilities.",
     },
     {
       id: 3,
@@ -97,18 +102,27 @@ export default function PageFive() {
           <Stack direction="column" spacing={4}>
             {labels.map((item: ISetting, index: number) => {
               const { label, setting } = item;
-              // const tooltip = tooltips.find((tooltipItem) => tooltipItem.id === index);
+              const tooltip = tooltips.find((tooltipItem) => tooltipItem.id === index);
 
               return (
                 <React.Fragment key={index}>
-                  {index  < tooltips.length ? (
-                    <Tooltip arrow title={tooltips[index].tool}>
+                  {tooltip ? (
+                    <Tooltip arrow title={tooltip.tool}>
                       <TextField label={label} value={setting} />
                     </Tooltip>
                   ) : (
                     <TextField label={label} value={setting} />
                   )}
                 </React.Fragment>
+                //   <React.Fragment key={index}>
+                //   {index < tooltips.length ? (
+                //     <Tooltip arrow title={tooltips[index].tool}>
+                //       <TextField label={label} value={setting} />
+                //     </Tooltip>
+                //   ) : (
+                //     <TextField label={label} value={setting} />
+                //   )}
+                // </React.Fragment>
               );
             })}
           </Stack>
