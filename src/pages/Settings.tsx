@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 // @mui
-import { Container, Typography, Box, Stack, TextField } from '@mui/material';
+import { Container, Typography, Box, Stack, TextField, Tooltip } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -68,10 +68,20 @@ export default function PageFive() {
       label: 'App Name',
       setting: navigator.appName,
     },
-    // {
-    //   label: 'Memory',
-    //   setting: navigator.deviceMemory,
-    // },
+  ];
+  const tooltips = [
+    {
+      id: 1,
+      tool: 'd',
+    },
+    {
+      id: 2,
+      tool: 'dax',
+    },
+    {
+      id: 3,
+      tool: 'dax',
+    },
   ];
   return (
     <>
@@ -84,14 +94,24 @@ export default function PageFive() {
           Settings
         </Typography>
         <Stack direction="column" spacing={4}>
-          {labels.map((item: ISetting) => {
-            const { label, setting } = item;
-            return (
-              <>
-                <TextField label={label} value={setting} />
-              </>
-            );
-          })}
+          <Stack direction="column" spacing={4}>
+            {labels.map((item: ISetting, index: number) => {
+              const { label, setting } = item;
+              // const tooltip = tooltips.find((tooltipItem) => tooltipItem.id === index);
+
+              return (
+                <React.Fragment key={index}>
+                  {index  < tooltips.length ? (
+                    <Tooltip arrow title={tooltips[index].tool}>
+                      <TextField label={label} value={setting} />
+                    </Tooltip>
+                  ) : (
+                    <TextField label={label} value={setting} />
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </Stack>
         </Stack>
       </Container>
     </>
