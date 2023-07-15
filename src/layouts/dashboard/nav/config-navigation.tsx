@@ -39,7 +39,7 @@ const navConfig = [
         icon: ICONS.user,
         children: [
           { title: 'Four', path: PATH_DASHBOARD.user.four },
-          { title: 'Five', path: PATH_DASHBOARD.user.five },
+          { title: 'Settings', path: PATH_DASHBOARD.user.five },
           { title: 'Six', path: PATH_DASHBOARD.user.six },
         ],
       },
