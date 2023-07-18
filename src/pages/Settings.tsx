@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 // @mui
-import { Container, Typography, Box, Stack, TextField, Tooltip } from '@mui/material';
+import { Container, Typography, Box, Stack, TextField, Tooltip, Skeleton } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -88,20 +88,17 @@ export default function PageFive() {
       tool: 'dax',
     },
   ];
-  const user = [];
-  const x = '3.14';
-  console.log(parseInt(x));
+
   return (
     <>
       <Helmet>
-        <title> Page Five | Minimal UI</title>
+        <title> Setting | Usefull Frontend</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
           Settings
         </Typography>
-        {user.length && 'deneme'}
         <Stack direction="column" spacing={4}>
           <Stack direction="column" spacing={4}>
             {labels.map((item: ISetting, index: number) => {
@@ -114,16 +111,17 @@ export default function PageFive() {
                     <>
                       <TextField label={label} value={setting + ' %'} />
                       <Box sx={{ position: 'relative' }}>
-                        <Box
+                        <Skeleton
+                          animation="wave"
+                          height={3}
+                          width={parseInt(setting) + '%'}
                           sx={{
                             position: 'absolute',
                             borderRadius: '22px',
-                            backgroundColor: parseInt(setting) > 50 ? '#1AB367' : '#e036369e',
-                            height: 2,
-                            width: parseInt(setting) + '%',
-                            top: -24,
+                            backgroundColor: chargeBar(parseInt(setting)),
+                            top: -4,
                           }}
-                        ></Box>
+                        ></Skeleton>
                       </Box>
                     </>
                   ) : tooltip ? (
@@ -151,3 +149,12 @@ export default function PageFive() {
     </>
   );
 }
+const chargeBar = (charge: number): string => {
+  if (charge <= 100 && charge >= 70) {
+    return 'green';
+  } else if (charge > 50 && charge < 70) {
+    return 'orange';
+  } else {
+    return 'red';
+  }
+};

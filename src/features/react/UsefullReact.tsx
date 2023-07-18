@@ -1,12 +1,10 @@
-import {
-  Grid,
-} from '@mui/material';
+import { Grid } from '@mui/material';
 import { HighlightCard } from 'src/components/usefullFrontendCard/HighlightCard';
 import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2 } from './data';
+import { data, data2, data3 } from './data';
 
 function UsefullReact() {
   useEffect(() => {
@@ -37,6 +35,12 @@ function UsefullReact() {
           data={data2}
           Title="Send Data with Form Data"
           Subheader="Generally we send data to backend as JSON format but sometimes need to send with form data. Lets take a look how send data with form data."
+          explanation="First create new form data. Then append to that form data. As string Key and string value."
+        />
+        <HighlightCard
+          data={data3}
+          Title="create an index.js file in the parent folder(components) folder and export all the components as a named export from that file like this:"
+          Subheader="When you're working on a large React project, you might have multiple folders containing different components."
           explanation="First create new form data. Then append to that form data. As string Key and string value."
         />
       </Grid>
