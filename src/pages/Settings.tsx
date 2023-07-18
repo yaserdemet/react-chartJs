@@ -89,7 +89,7 @@ export default function PageFive() {
     },
   ];
   const user = [];
-  const x = "3.14"
+  const x = '3.14';
   console.log(parseInt(x));
   return (
     <>
@@ -113,17 +113,17 @@ export default function PageFive() {
                   {index === 0 ? (
                     <>
                       <TextField label={label} value={setting + ' %'} />
-                      <Box
-                      
-                        sx={{
-                          borderRadius : "22px",
-                          backgroundColor: '#1AB367',
-                          height: 2,
-                          width: parseInt(setting)  + '%',
-                          mt : "-24px",
-                        }}
-                      >
-                      ⚡
+                      <Box sx={{ position: 'relative' }}>
+                        <Box
+                          sx={{
+                            position: 'absolute',
+                            borderRadius: '22px',
+                            backgroundColor: parseInt(setting) > 50 ? '#1AB367' : '#e036369e',
+                            height: 2,
+                            width: parseInt(setting) + '%',
+                            top: -24,
+                          }}
+                        ></Box>
                       </Box>
                     </>
                   ) : tooltip ? (
