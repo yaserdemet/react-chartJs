@@ -7,3 +7,4 @@ src/service-worker.ts
 src/serviceWorkerRegistration.ts
 src/setupTests.ts
 src/App.tsx
+src/*

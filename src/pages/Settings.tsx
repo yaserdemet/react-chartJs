@@ -88,6 +88,9 @@ export default function PageFive() {
       tool: 'dax',
     },
   ];
+  const user = [];
+  const x = "3.14"
+  console.log(parseInt(x));
   return (
     <>
       <Helmet>
@@ -98,6 +101,7 @@ export default function PageFive() {
         <Typography variant="h3" component="h1" paragraph>
           Settings
         </Typography>
+        {user.length && 'deneme'}
         <Stack direction="column" spacing={4}>
           <Stack direction="column" spacing={4}>
             {labels.map((item: ISetting, index: number) => {
@@ -106,7 +110,23 @@ export default function PageFive() {
 
               return (
                 <React.Fragment key={index}>
-                  {tooltip ? (
+                  {index === 0 ? (
+                    <>
+                      <TextField label={label} value={setting + ' %'} />
+                      <Box
+                      
+                        sx={{
+                          borderRadius : "22px",
+                          backgroundColor: '#1AB367',
+                          height: 2,
+                          width: parseInt(setting)  + '%',
+                          mt : "-24px",
+                        }}
+                      >
+                      ⚡
+                      </Box>
+                    </>
+                  ) : tooltip ? (
                     <Tooltip arrow title={tooltip.tool}>
                       <TextField label={label} value={setting} />
                     </Tooltip>
