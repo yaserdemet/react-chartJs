@@ -65,3 +65,38 @@ This is common practice when working on large industry/company projects
 `,
   },
 ];
+
+export const data4 = [
+  {
+    id: 4,
+    label: `
+When we use JSX Expression like this:
+{ users.length && <User /> }
+If users.length is zero then we will end up displaying 0
+on the screen because the logical && operator
+(also known as short circuit operator) instantly returns that value
+if it evaluates to a falsy value.
+So the above code will be equivalent to the below code if users.length is zero.
+{ 0 && <User /> 
+which evaluates to
+
+{ 0 }
+
+So to fix this, you can use either of the following ways to correctly write the JSX
+
+1. { users.length > 0 && <User /> }
+
+2. { !!users.length && <User /> }
+    
+3. { Boolean(users.length) && <User /> }
+
+4. { users.length ? <User /> : null }
+
+The !! operator converts any value into its boolean true or false.
+So the 2nd and 3rd conditions above are equivalent.
+
+The ternary operator in the fourth case above will check for truthy or falsy
+value of the left side of ? and as 0 is falsy so null will be displayed.
+`,
+  },
+];
