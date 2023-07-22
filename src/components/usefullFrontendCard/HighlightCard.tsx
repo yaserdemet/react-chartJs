@@ -27,12 +27,14 @@ export function HighlightCard({ Title, explanation, Subheader, data }: IHighLigh
               ))}
             </code>
           </pre>
-          <Accordion aria-controls="panel1a-content" id="panel1a-header">
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>Explanations</AccordionSummary>
-            <AccordionDetails>
-              <Typography variant="button">{explanation}</Typography>
-            </AccordionDetails>
-          </Accordion>
+          {!!explanation && (
+            <Accordion aria-controls="panel1a-content" id="panel1a-header">
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>Explanations</AccordionSummary>
+              <AccordionDetails>
+                <Typography variant="button">{explanation}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          )}
         </Card>
       </Grid>
     </>

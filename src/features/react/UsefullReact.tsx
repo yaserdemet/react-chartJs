@@ -45,9 +45,8 @@ function UsefullReact() {
         />
         <HighlightCard
           data={data4}
-          Title="create an index.js file in the parent folder(components) folder and export all the components as a named export from that file like this:"
-          Subheader="When you're working on a large React project, you might have multiple folders containing different components."
-          explanation="First create new form data. Then append to that form data. As string Key and string value."
+          Title="Shot Circuit React Component"
+          Subheader="Conditional Rendering with short circuit"
         />
       </Grid>
     </>
