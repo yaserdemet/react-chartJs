@@ -107,3 +107,37 @@ null will be displayed.
 `,
   },
 ];
+
+export const data5 = [
+  {
+    id: 3,
+    label: `
+    Suppose you have 3 components
+     ( TextInput / Component1 / Component2 )
+
+    function App() {
+     return (
+    <>
+      <TextInput />
+      <Component1 />
+      <Component2 />
+    </>
+    )}
+    function TextInput () {
+    const [textValue, setTextValue] = useState("")
+    return (
+    <input 
+    type='text' 
+    value={textValue} 
+    onChange={e => setTextValue(e.target.value)}
+    />
+    )}
+    
+    And you need to have the textValue inside
+   ( Component1 & Component2 )
+   
+    What's the first solution that came to your mind?
+
+`,
+  },
+];
