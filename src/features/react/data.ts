@@ -135,9 +135,32 @@ export const data5 = [
     
     And you need to have the textValue inside
    ( Component1 & Component2 )
-   
-    What's the first solution that came to your mind?
 
+    What's the first solution that came to your mind?
+  
+    function App() {
+      return (
+       <TextInput
+        render={( textValue ) => (
+        <>
+          <Component1 textValue={textValue} />
+          <Component2 textValue={textValue} />
+        </>
+        )}
+       />
+     )}
+     
+     
+     function TextInput ({ render }) {
+     const [textValue, setTextValue] = useState("")
+     return (
+     <input 
+     type='text' 
+     value={textValue} 
+     onChange={e => setTextValue(e.target.value)}
+     />
+     {render(textValue)}
+     )}
 `,
   },
 ];

@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2, data3, data4 } from './data';
+import { data, data2, data3, data4, data5 } from './data';
 
 function UsefullReact() {
   useEffect(() => {
@@ -47,6 +47,12 @@ function UsefullReact() {
           data={data4}
           Title="Shot Circuit React Component"
           Subheader="Conditional Rendering with short circuit"
+        />
+        <HighlightCard
+          data={data5}
+          Title="Dont hold state top component to share other components"
+          Subheader="Render Props Design Model"
+          explanation="Dont hold state the parentest component then send others. Call first component. Then render inside other component send value to other components then use inside that component."
         />
       </Grid>
     </>
