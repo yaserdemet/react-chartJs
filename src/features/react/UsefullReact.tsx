@@ -15,15 +15,9 @@ function UsefullReact() {
       Prism.highlightAllUnder(document, false);
     };
   }, []);
-  const handleClick = (text: any) => {
-    const speak = new SpeechSynthesisUtterance(text);
-    speak.lang = 'en-UK';
-    window.speechSynthesis.speak(speak);
-  };
   return (
     <>
       <Grid container spacing={4}>
-        <Button onClick={() => handleClick('')}>konus</Button>
         <HighlightCard
           data={data}
           Title="Object for Dependencies Array"
