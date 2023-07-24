@@ -37,6 +37,7 @@ function Header({currentTab, setCurrentTab} : any) {
           variant="h4"
           sx={{ position: 'absolute', bottom: 36, left: 160, color: blueGrey[900] }}
         >
+          
           {user?.displayName}
         </Typography>
         <Typography

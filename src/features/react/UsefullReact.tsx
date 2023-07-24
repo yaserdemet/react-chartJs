@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { HighlightCard } from 'src/components/usefullFrontendCard/HighlightCard';
 import React, { useEffect } from 'react';
 import Prism from 'prismjs';
@@ -15,10 +15,15 @@ function UsefullReact() {
       Prism.highlightAllUnder(document, false);
     };
   }, []);
-
+  const handleClick = (text: any) => {
+    const speak = new SpeechSynthesisUtterance(text);
+    speak.lang = 'en-UK';
+    window.speechSynthesis.speak(speak);
+  };
   return (
     <>
       <Grid container spacing={4}>
+        <Button onClick={() => handleClick('')}>konus</Button>
         <HighlightCard
           data={data}
           Title="Object for Dependencies Array"
