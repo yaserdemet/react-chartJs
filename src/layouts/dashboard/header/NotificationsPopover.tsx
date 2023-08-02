@@ -26,6 +26,7 @@ import Iconify from '../../../components/iconify';
 import Scrollbar from '../../../components/scrollbar';
 import MenuPopover from '../../../components/menu-popover';
 import { IconButtonAnimate } from '../../../components/animate';
+import { useStore } from 'src/zustand/store';
 
 // ----------------------------------------------------------------------
 
@@ -33,11 +34,11 @@ export default function NotificationsPopover() {
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
 
   const [notifications, setNotifications] = useState(_notifications);
-
-  const totalUnRead = notifications.filter((item) => item.isUnRead === true).length;
+  const {totalUnRead, onClickBadge} = useStore()
 
   const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
     setOpenPopover(event.currentTarget);
+    onClickBadge()
   };
 
   const handleClosePopover = () => {
