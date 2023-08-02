@@ -4,6 +4,8 @@ interface Store {
   totalUnRead: number;
   onClickBadge: VoidFunction;
   initialInputValue : string;
+  count : number;
+  countUp : VoidFunction;
 }
 export const useStore = create<Store>((set) => ({
   totalUnRead: _notifications.filter((item: any) => item.isUnRead === true).length,
@@ -11,5 +13,5 @@ export const useStore = create<Store>((set) => ({
   initialInputValue : "",
   changeInputValue : (value : any) => set({initialInputValue: value }),
   count : 0,
-  countUp : 
+  countUp : () => set((state : any) =>   ({count : state.count + 1}))
 }));
