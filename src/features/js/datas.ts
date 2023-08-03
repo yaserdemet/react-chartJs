@@ -116,6 +116,27 @@ const formatDateToCountry = (date, language = "tr-TR")=>{
   },
 ];
 
+const ticketId = 1;
+const page = 1;
+const rowsPerPage = 10;
+export const data8 = [
+  {
+    id: 8,
+    label: `
+    To create url like this =>
+    let queryUrl = /api/tickets/get-other-tickets-of-requester?currentTicketId=${ticketId}&Page=${page}&PageSize=${rowsPerPage};
+    Use this new UrlSearchParams => 
+    let searchParams = new URLSearchParams({
+      "currentTicketId": String(ticketId),
+      "Page": String(page),
+      "PageSize": String(rowsPerPage)
+    });
+    
+    
+  `,
+  },
+];
+
 export const config = `
 {
   "compilerOptions": {
