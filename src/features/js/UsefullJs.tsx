@@ -12,7 +12,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { config, data, data2, data3, data4, data5, data6, data7, env } from './datas';
+import { config, data, data2, data3, data4, data5, data6, data7, data8, env } from './datas';
 import { IJs } from './types/js-types';
 
 function UsefullJs() {
@@ -155,6 +155,12 @@ function UsefullJs() {
           Subheader="Make more readable date"
           explanation="In JavaScript, the Epoch time is typically represented as the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC. This value is commonly referred to as Unix time or POSIX time.
           To format an Epoch time into a human-readable date format in JavaScript, you can use the Date object."
+        />
+        <HighlightCard
+          data={data8}
+          Title="new UrlSearchParams()"
+          Subheader="Make more readable and editable your url"
+          explanation="To use new UrlSearchParams() more easy, edit and update. URLSearchParams automatically performs URL encoding. This way we can make sure that special characters are encoded appropriately."
         />
       </Grid>
     </>

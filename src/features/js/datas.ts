@@ -123,13 +123,14 @@ export const data8 = [
   {
     id: 8,
     label: `
-    To create url like this =>
-    let queryUrl = /api/tickets/get-other-tickets-of-requester?currentTicketId=${ticketId}&Page=${page}&PageSize=${rowsPerPage};
-    Use this new UrlSearchParams => 
-    let searchParams = new URLSearchParams({
-      "currentTicketId": String(ticketId),
-      "Page": String(page),
-      "PageSize": String(rowsPerPage)
+To create url like this =>
+let queryUrl = /api/tickets/get-other-tickets
+?currentTicketId=${ticketId}&Page=${page}&PageSize=${rowsPerPage};
+Use this new UrlSearchParams => 
+let searchParams = new URLSearchParams({
+"currentTicketId": String(ticketId),
+"Page": String(page),
+"PageSize": String(rowsPerPage)
     });
     
     
