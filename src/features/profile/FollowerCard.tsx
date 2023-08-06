@@ -9,14 +9,17 @@ function FollowerCard({ follower }: any) {
   const [toggle, setToogle] = useState(isFollowed);
   return (
     <>
+     
       <Card
-         drag
-         dragConstraints={{
-           top: 0,
-           left: 0,
-           right: 0,
-           bottom: 0,
-         }}
+        layout
+        drag
+        dragElastic={0.2}
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
         component={m.div}
         sx={{
           p: 3,

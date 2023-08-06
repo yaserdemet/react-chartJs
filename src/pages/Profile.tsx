@@ -13,6 +13,7 @@ import ProfileFriends from 'src/features/profile/ProfileFriends';
 import Social from 'src/features/profile/Social';
 import ImageSide from 'src/features/profile/ImageSide';
 import { useSettingsContext } from '../components/settings';
+import { m, AnimatePresence } from 'framer-motion';
 
 // ----------------------------------------------------------------------
 
@@ -20,6 +21,7 @@ export default function PageFour() {
   const { themeStretch } = useSettingsContext();
   const [currentTab, setCurrentTab] = useState('Profile');
   const [searchFriends, setSearchFriends] = useState('');
+  const [all, setAll] = useState(false);
 
   return (
     <>
@@ -50,7 +52,7 @@ export default function PageFour() {
         <>
           {currentTab === 'Profile' && (
             <Grid mt={4} container spacing={4}>
-              <Grid item  xs={12} md={4}>
+              <Grid item xs={12} md={4}>
                 <ProfileInfo /> <ProfileAbout />
                 <Social />
               </Grid>
@@ -59,7 +61,20 @@ export default function PageFour() {
               </Grid>
             </Grid>
           )}
-          {currentTab === 'Friends' && <Friends />}
+          <AnimatePresence>
+            {/* animatePresence conditional durumda kullanılır. exit ile animasyonu bitirir. */}
+            {currentTab === 'Friends' && (
+              <Box
+                component={m.div}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Friends />
+              </Box>
+            )}
+          </AnimatePresence>
           {currentTab === 'Followers' && (
             <ProfileFriends
               friends={_userFriends}
