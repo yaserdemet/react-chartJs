@@ -15,8 +15,13 @@ export default function PageThree() {
   return (
     <Box
       initial={{ opacity: 0, translateX: -120 }}
-      animate={{ opacity: 1, translateX: 0, }}
-      transition={{ duration: 0.5 }}
+      animate={{
+        opacity: 1,
+        translateX: 0,
+        //  scale: [0.7, 1],
+        // rotate: [0, 0, 270, 270, 0],
+      }}
+      transition={{ duration: 2, type: 'spring', stiffness: 80 }}
       component={m.section}
     >
       <Helmet>
@@ -24,7 +29,7 @@ export default function PageThree() {
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
-        <Typography variant="h3" component="h1" paragraph>
+        <Typography variant="h3" component={m.h1} paragraph>
           React
         </Typography>
 

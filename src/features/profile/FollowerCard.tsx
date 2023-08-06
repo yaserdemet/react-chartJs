@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Card, Button, Avatar, Typography, Stack } from '@mui/material';
 import Iconify from 'src/components/iconify/Iconify';
 import axiosInstance from 'src/utils/axios';
-
+import { m } from 'framer-motion';
 function FollowerCard({ follower }: any) {
   const { name, country, avatarUrl, isFollowed } = follower;
 
@@ -10,6 +10,14 @@ function FollowerCard({ follower }: any) {
   return (
     <>
       <Card
+         drag
+         dragConstraints={{
+           top: 0,
+           left: 0,
+           right: 0,
+           bottom: 0,
+         }}
+        component={m.div}
         sx={{
           p: 3,
           display: 'flex',

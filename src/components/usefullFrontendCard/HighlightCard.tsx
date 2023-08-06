@@ -11,6 +11,7 @@ import {
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { IHighLight } from './types';
+import { m, motion } from 'framer-motion';
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +19,13 @@ export function HighlightCard({ Title, explanation, Subheader, data }: IHighLigh
   return (
     <>
       <Grid item xs={12} md={6}>
-        <Card>
+        <Card
+          sx={{ '&:hover': { cursor: 'pointer' } }}
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 0.7 }}
+          component={m.div}
+        >
           <CardHeader subheader={Subheader} title={Title} />
           <pre className="line-numbers">
             <code className="language-js" data-prismjs-copy="Copy the JavaScript snippet!">
