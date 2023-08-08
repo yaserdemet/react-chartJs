@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Grid,
   Card,
@@ -24,6 +25,15 @@ function UsefullJs() {
       Prism.highlightAllUnder(document, false);
     };
   }, []);
+  const [throwError, setThrowError] = useState(false);
+
+  const handleClick = () => {
+    setThrowError(true);
+  };
+
+  if (throwError) {
+    throw new Error('I crashed!');
+  }
 
   return (
     <>

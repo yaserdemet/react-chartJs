@@ -26,7 +26,7 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx", "src/pages/JavaScript.tsx",
+    "src/**/*.tsx", "src/pages/JavaScript.tsx", "src/utils/errorBoundries.jsx",
   ],
   "exclude": [
     "node_modules"

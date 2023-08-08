@@ -27,32 +27,35 @@ import { ThemeSettings, SettingsProvider } from './components/settings';
 // https://docs.minimals.cc/authentication/ts-version
 
 import { AuthProvider } from './auth/JwtContext';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import ErrorBoundary from './utils/errorBoundries';
 
 // ----------------------------------------------------------------------
 
 export default function App() {
   return (
-    <AuthProvider>
-      <HelmetProvider>
-        <SettingsProvider>
-          <BrowserRouter>
-            <ScrollToTop />
-            <MotionLazyContainer>
-              <ThemeProvider>
-                <ThemeSettings>
-                  <ThemeLocalization>
-                    <SnackbarProvider>
-                      <Router />
-                    </SnackbarProvider>
-                  </ThemeLocalization>
-                </ThemeSettings>
-              </ThemeProvider>
-            </MotionLazyContainer>
-          </BrowserRouter>
-        </SettingsProvider>
-      </HelmetProvider>
-    </AuthProvider>
+    <ErrorBoundary>
+      <AuthProvider>
+        <HelmetProvider>
+          <SettingsProvider>
+            <BrowserRouter>
+              <ScrollToTop />
+              <MotionLazyContainer>
+                <ThemeProvider>
+                  <ThemeSettings>
+                    <ThemeLocalization>
+                      <SnackbarProvider>
+                        <Router />
+                      </SnackbarProvider>
+                    </ThemeLocalization>
+                  </ThemeSettings>
+                </ThemeProvider>
+              </MotionLazyContainer>
+            </BrowserRouter>
+          </SettingsProvider>
+        </HelmetProvider>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
