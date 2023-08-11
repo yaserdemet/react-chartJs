@@ -40,6 +40,7 @@ function UsefullJs() {
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <Card>
+            <button onClick={handleClick}>throw</button>
             <CardHeader
               title="Use ES6 Default Parameters to simply the code"
               subheader="ES5 Old Way"

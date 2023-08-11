@@ -18,6 +18,7 @@ import {
   LoginPage,
   PageThree,
 } from './elements';
+import ErrorHandling from 'src/pages/ErrorHandling';
 
 // ----------------------------------------------------------------------
 
@@ -62,7 +63,7 @@ export default function Router() {
     },
     {
       element: <CompactLayout />,
-      children: [{ path: '404', element: <PageSix /> }],
+      children: [{ path: '404', element: <ErrorHandling /> }],
     },
     
     {

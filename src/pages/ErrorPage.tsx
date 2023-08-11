@@ -7,10 +7,40 @@ import { Button, Typography } from '@mui/material';
 import { MotionContainer, varBounce } from '../components/animate';
 // assets
 import { ForbiddenIllustration } from '../assets/illustrations';
+import { useEffect, useState } from 'react';
 
 // ----------------------------------------------------------------------
 
 export default function PageSix() {
+  const [throwError, setThrowError] = useState(false);
+
+  const handleClick = () => {
+    setThrowError(true);
+  };
+
+  if (throwError) {
+    throw new Error('I crashed!');
+  }
+ 
+  useEffect(() => {
+    const button = document.createElement('button');
+    button.innerHTML = "Click Me";
+    button.style.position = "absolute";
+    button.style.top = "20";
+    button.style.right = "20";
+
+    button.onclick = () => {
+      console.log("clicked");
+      handleClick()
+        throw new Error("Button was clicked!");
+    };
+    document.body.appendChild(button);
+
+    // Cleanup: Remove the button from DOM when component is unmounted
+    return () => {
+        document.body.removeChild(button);
+    };
+}, []); 
   return (
     <>
       <Helmet>
