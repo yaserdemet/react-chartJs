@@ -55,11 +55,16 @@ export default function Router() {
             { element: <Navigate to="/dashboard/user/four" replace />, index: true },
             { path: 'four', element: <PageFour /> },
             { path: 'five', element: <PageFive /> },
-            { path: 'six', element: <PageSix /> },
+           
           ],
         },
       ],
     },
+    {
+      element: <CompactLayout />,
+      children: [{ path: '404', element: <PageSix /> }],
+    },
+    
     {
       element: <CompactLayout />,
       children: [{ path: '404', element: <Page404 /> }],

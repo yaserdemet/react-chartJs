@@ -1,27 +1,45 @@
+import { m } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
-import { Container, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 // components
-import { useSettingsContext } from '../components/settings';
+import { MotionContainer, varBounce } from '../components/animate';
+// assets
+import { ForbiddenIllustration } from '../assets/illustrations';
 
 // ----------------------------------------------------------------------
 
 export default function PageSix() {
-  const { themeStretch } = useSettingsContext();
-
   return (
     <>
       <Helmet>
-        <title> Error Page | Usefull Page</title>
+        <title> 403 Forbidden | Usefull Frontend</title>
       </Helmet>
 
-      <Container maxWidth={themeStretch ? false : 'xl'}>
-        <Typography variant="h3" component="h1" paragraph>
-          Page Six
-        </Typography>
+      <MotionContainer>
+        <m.div variants={varBounce().in}>
+          <Typography variant="h3" paragraph>
+            No permission
+          </Typography>
+        </m.div>
 
-      
-      </Container>
+        <m.div variants={varBounce().in}>
+          <Typography sx={{ color: 'text.secondary' }}>
+            The page you&apos;re trying access has restricted access.
+            <br />
+            Please refer to your system administrator
+          </Typography>
+        </m.div>
+
+        <m.div variants={varBounce().in}>
+          <ForbiddenIllustration sx={{ height: 260, my: { xs: 5, sm: 10 } }} />
+        </m.div>
+
+        <Button component={RouterLink} to="/" size="large" variant="contained">
+          Go to Home
+        </Button>
+      </MotionContainer>
     </>
   );
 }
