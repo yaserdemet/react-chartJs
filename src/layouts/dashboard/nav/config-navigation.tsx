@@ -38,9 +38,9 @@ const navConfig = [
         path: PATH_DASHBOARD.user.root,
         icon: ICONS.user,
         children: [
-          { title: 'Four', path: PATH_DASHBOARD.user.four },
+          { title: 'Profile', path: PATH_DASHBOARD.user.four },
           { title: 'Settings', path: PATH_DASHBOARD.user.five },
-          { title: 'Six', path: PATH_DASHBOARD.user.six },
+          { title: 'Error Page', path: PATH_DASHBOARD.user.six },
         ],
       },
     ],
