@@ -21,5 +21,4 @@ export const PageThree = Loadable(lazy(() => import('../pages/React')));
 export const PageFour = Loadable(lazy(() => import('../pages/Profile')));
 export const PageFive = Loadable(lazy(() => import('../pages/Settings')));
 export const PageSix = Loadable(lazy(() => import('../pages/ErrorPage')));
-
 export const Page404 = Loadable(lazy(() => import('../pages/Page404')));
