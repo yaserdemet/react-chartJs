@@ -21,8 +21,6 @@ export function HighlightCard({ Title, explanation, Subheader, data }: IHighLigh
       <Grid item xs={12} md={6}>
         <Card
           sx={{ '&:hover': { cursor: 'pointer' } }}
-          whileTap={{ scale: 0.9 }}
-          whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.7 }}
           component={m.div}
         >

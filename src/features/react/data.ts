@@ -110,7 +110,7 @@ null will be displayed.
 
 export const data5 = [
   {
-    id: 3,
+    id: 5,
     label: `
     Suppose you have 3 components
      ( TextInput / Component1 / Component2 )
@@ -161,6 +161,40 @@ export const data5 = [
      />
      {render(textValue)}
      )}
+`,
+  },
+];
+
+export const data6 = [
+  {
+    id: 6,
+    label: `
+    const [text, setText] = useState("");
+
+const appendText = () => {
+  setText(prevText => prevText + " appended text");
+};
+
+const [count, setCount] = useState(0);
+
+const increment = () => {
+  setCount(prevCount => prevCount + 1);
+};
+
+const [user, setUser] = useState({ name: "John", age: 25 });
+
+const incrementAge = () => {
+  setUser(prevUser => ({
+    ...prevUser,
+    age: prevUser.age + 1
+  }));
+};
+
+const [items, setItems] = useState([]);
+
+const addItem = (newItem) => {
+  setItems(prevItems => [...prevItems, newItem]);
+};
 `,
   },
 ];
