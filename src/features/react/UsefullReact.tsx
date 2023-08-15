@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2, data3, data4, data5 } from './data';
+import { data, data2, data3, data4, data5, data6 } from './data';
 
 function UsefullReact() {
   useEffect(() => {
@@ -52,6 +52,13 @@ function UsefullReact() {
           Title="Dont hold state top component to share other components"
           Subheader="Render Props Design Model"
           explanation="Dont hold state the parentest component then send others. Call first component. Then render inside other component send value to other components then use inside that component."
+        />
+
+        <HighlightCard
+          data={data6}
+          Title="Why do we need a callback in setState?"
+          Subheader="To ensure state update correctly use callback inside setState"
+          explanation="In the case of the function argument, it can be useful to use a callback function with setState to ensure that the state update is performed correctly. This is because setState may update the state asynchronously, and if you need to perform some action that depends on the state being updated immediately after calling setState, you cannot rely on the state to have been updated yet.."
         />
       </Grid>
     </>
