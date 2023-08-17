@@ -27,18 +27,25 @@ import Scrollbar from '../../../components/scrollbar';
 import MenuPopover from '../../../components/menu-popover';
 import { IconButtonAnimate } from '../../../components/animate';
 import { useStore } from 'src/zustand/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { onClickBadge } from 'src/redux/CountSlice';
 
 // ----------------------------------------------------------------------
 
 export default function NotificationsPopover() {
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
-
+  const dispatch = useDispatch();
+  const count = useSelector((state: any) => state.counter.value);
+  console.log(count);
+  const commnet = useSelector((state : any) => state.comment.value)
+  console.log(commnet);
   const [notifications, setNotifications] = useState(_notifications);
-  const {totalUnRead, onClickBadge} = useStore()
+  // const { totalUnRead, onClickBadge } = useStore();
 
   const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
     setOpenPopover(event.currentTarget);
-    onClickBadge()
+    dispatch(onClickBadge()) 
+    handleMarkAllAsRead();
   };
 
   const handleClosePopover = () => {
@@ -61,7 +68,7 @@ export default function NotificationsPopover() {
         onClick={handleOpenPopover}
         sx={{ width: 40, height: 40 }}
       >
-        <Badge badgeContent={totalUnRead} color="error">
+        <Badge badgeContent={count} color="error">
           <Iconify icon="eva:bell-fill" />
         </Badge>
       </IconButtonAnimate>
@@ -72,11 +79,11 @@ export default function NotificationsPopover() {
             <Typography variant="subtitle1">Notifications</Typography>
 
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              You have {totalUnRead} unread messages
+              You have {count} unread messages
             </Typography>
           </Box>
 
-          {totalUnRead > 0 && (
+          {count > 0 && (
             <Tooltip title=" Mark all as read">
               <IconButton color="primary" onClick={handleMarkAllAsRead}>
                 <Iconify icon="eva:done-all-fill" />

@@ -30,32 +30,36 @@ import { AuthProvider } from './auth/JwtContext';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ErrorBoundary from './utils/errorBoundries';
+import { Provider } from 'react-redux';
+import store from "./redux/Store"
 
 // ----------------------------------------------------------------------
 
 export default function App() {
   return (
-    <ErrorBoundary>
-      <AuthProvider>
-        <HelmetProvider>
-          <SettingsProvider>
-            <BrowserRouter>
-              <ScrollToTop />
-              <MotionLazyContainer>
-                <ThemeProvider>
-                  <ThemeSettings>
-                    <ThemeLocalization>
-                      <SnackbarProvider>
-                        <Router />
-                      </SnackbarProvider>
-                    </ThemeLocalization>
-                  </ThemeSettings>
-                </ThemeProvider>
-              </MotionLazyContainer>
-            </BrowserRouter>
-          </SettingsProvider>
-        </HelmetProvider>
-      </AuthProvider>
-    </ErrorBoundary>
+    <Provider store={store}>
+      <ErrorBoundary>
+        <AuthProvider>
+          <HelmetProvider>
+            <SettingsProvider>
+              <BrowserRouter>
+                <ScrollToTop />
+                <MotionLazyContainer>
+                  <ThemeProvider>
+                    <ThemeSettings>
+                      <ThemeLocalization>
+                        <SnackbarProvider>
+                          <Router />
+                        </SnackbarProvider>
+                      </ThemeLocalization>
+                    </ThemeSettings>
+                  </ThemeProvider>
+                </MotionLazyContainer>
+              </BrowserRouter>
+            </SettingsProvider>
+          </HelmetProvider>
+        </AuthProvider>
+      </ErrorBoundary>
+    </Provider>
   );
 }

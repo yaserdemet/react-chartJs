@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link, Grid, FormControlLabel, Checkbox, AvatarGroup, Stack } from '@mui/material';
+import { Link, Grid, FormControlLabel, Checkbox, AvatarGroup, Stack, TextField } from '@mui/material';
 import { useAuthContext } from 'src/auth/useAuthContext';
 import { CustomAvatar } from 'src/components/custom-avatar';
 import Iconify from 'src/components/iconify/Iconify';
@@ -94,6 +94,7 @@ function ImageSide() {
               </IconButton>
             </Stack>
           </CardActions>
+            <TextField sx={{p : 2}} fullWidth  size='small' />
         </Card>
       </>
     </>
