@@ -142,17 +142,16 @@ export const data9 = [
   {
     id: 9,
     label: `
-    Use splice instead of using delete
-     to delete an item from an array.
-    Using delete replaces the item with
-     undefined instead of removing it from the array
-    const heros = ["Axe", "Venom", "Viper", "Apparat"]
-    console.log(heros.lenght) => 4
-    delete names[2]
-    console.log(heros.lenght) => 4 still return 4 
-    because 2nd elemet will be empty now. So use splice method;
-    heros.splice()
-
+Use splice instead of using delete
+to delete an item from an array.
+Using delete replaces the item with
+undefined instead of removing it from the array
+const heros = ["Axe", "Venom", "Viper", "Apparat"]
+console.log(heros.lenght) => 4
+delete names[2]
+["Axe", "Venom", empty, "Apparat"] 
+because 2nd elemet will be empty now. So use splice method;
+heros.splice(2,1) this  will return ["Axe", "Venom", "Apparat"]
   `,
   },
 ];

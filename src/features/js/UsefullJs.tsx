@@ -175,9 +175,9 @@ function UsefullJs() {
         />
             <HighlightCard
           data={data9}
-          Title="new UrlSearchParams()"
-          Subheader="Make more readable and editable your url"
-          explanation="To use new UrlSearchParams() more easy, edit and update. URLSearchParams automatically performs URL encoding. This way we can make sure that special characters are encoded appropriately."
+          Title="Delete vs splice method"
+          Subheader="Dont hold empty value in array"
+          // explanation="To use new UrlSearchParams() more easy, edit and update. URLSearchParams automatically performs URL encoding. This way we can make sure that special characters are encoded appropriately."
         />
       </Grid>
     </>
