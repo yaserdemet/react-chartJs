@@ -156,6 +156,46 @@ heros.splice(2,1) this  will return ["Axe", "Venom", "Apparat"]
   },
 ];
 
+export const data10 = [
+  {
+    id: 10,
+    label: `
+    let obj = {
+      name : "Mozz",
+      age : 30
+    }
+    Object.freeze(obj);
+    obj.age = 25
+    console.log(obj) =>  {
+      name : "Mozz",
+      age : 30
+    }
+
+    let obj2 = {
+      name : "Mozz",
+      age : 30
+    }
+
+    Object.seal(obj2);
+    obj2.age = 25;
+    console.log(obj2) => {
+      name : "Mozz",
+      age : 25
+    }
+
+    With 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞(): 
+1-We cannot add a new property in an object. ❌
+2-We cannot delete existing properties. ❌
+3-We cannot update the value of existing properties. ❌
+
+With 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥(): 
+1-We cannot add a new property in an object. ❌
+2-We cannot delete existing properties. ❌
+3-We can update the value of existing properties. ✅
+  `,
+  },
+];
+
 export const config = `
 {
   "compilerOptions": {

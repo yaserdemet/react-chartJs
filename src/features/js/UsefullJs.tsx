@@ -13,7 +13,20 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { config, data, data2, data3, data4, data5, data6, data7, data8, data9, env } from './datas';
+import {
+  config,
+  data,
+  data10,
+  data2,
+  data3,
+  data4,
+  data5,
+  data6,
+  data7,
+  data8,
+  data9,
+  env,
+} from './datas';
 import { IJs } from './types/js-types';
 
 function UsefullJs() {
@@ -173,17 +186,19 @@ function UsefullJs() {
           Subheader="Make more readable and editable your url"
           explanation="To use new UrlSearchParams() more easy, edit and update. URLSearchParams automatically performs URL encoding. This way we can make sure that special characters are encoded appropriately."
         />
-            <HighlightCard
+        <HighlightCard
           data={data9}
           Title="Delete vs splice method"
           Subheader="Dont hold empty value in array"
           // explanation="To use new UrlSearchParams() more easy, edit and update. URLSearchParams automatically performs URL encoding. This way we can make sure that special characters are encoded appropriately."
         />
-            <HighlightCard
-          data={data9}
+        <HighlightCard
+          data={data10}
           Title="Object Freeze vs Object Seal"
-          Subheader="Dont hold empty value in array"
-          explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable."
+          Subheader="Immutable objects can be handy in making our programs more reliable and less buggy.
+          "
+          explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable.
+          "
         />
       </Grid>
     </>
