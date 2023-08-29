@@ -179,6 +179,12 @@ function UsefullJs() {
           Subheader="Dont hold empty value in array"
           // explanation="To use new UrlSearchParams() more easy, edit and update. URLSearchParams automatically performs URL encoding. This way we can make sure that special characters are encoded appropriately."
         />
+            <HighlightCard
+          data={data9}
+          Title="Object Freeze vs Object Seal"
+          Subheader="Dont hold empty value in array"
+          explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable."
+        />
       </Grid>
     </>
   );
