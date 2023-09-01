@@ -202,11 +202,8 @@ function UsefullJs() {
         />
           <HighlightCard
           data={data10}
-          Title="Object Freeze vs Object Seal"
-          Subheader="Immutable objects can be handy in making our programs more reliable and less buggy.
-          "
-          explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable.
-          "
+          Title="Map vs Object"
+         
         />
       </Grid>
     </>
