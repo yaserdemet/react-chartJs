@@ -196,6 +196,35 @@ With 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥():
   },
 ];
 
+export const data11 = [
+  {
+    id: 11,
+    label: `
+let myMap = new Map();
+You can set values using the set method:
+myMap.set('key', 'value');
+myMap.set(1, 'numberOne');
+
+You can get values using the get method:
+console.log(myMap.get('key')); // Outputs: value
+console.log(myMap.get(1));     // Outputs: numberOne
+
+You can check if a key exists using the has method:
+console.log(myMap.has('key')); // Outputs: true
+
+Delete a key in Map
+myMap.delete('key');
+
+You can retrieve the number of key/value pairs in the Map using the size property:
+console.log(myMap.size); // Outputs: number of elements in the map
+
+To remove all key/value pairs:
+myMap.clear();
+
+  `,
+  },
+];
+
 export const config = `
 {
   "compilerOptions": {

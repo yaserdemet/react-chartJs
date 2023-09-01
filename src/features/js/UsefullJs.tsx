@@ -201,9 +201,12 @@ function UsefullJs() {
           "
         />
           <HighlightCard
-          data={data10}
+          data={data11}
           Title="Map vs Object"
-         
+          Subheader="Use Map Object instead of plain object when needed to declare diffrent type of key
+          "
+          explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable.
+          "
         />
       </Grid>
     </>
