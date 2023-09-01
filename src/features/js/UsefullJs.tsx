@@ -17,6 +17,7 @@ import {
   config,
   data,
   data10,
+  data11,
   data2,
   data3,
   data4,
@@ -200,12 +201,13 @@ function UsefullJs() {
           explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable.
           "
         />
-          <HighlightCard
+        <HighlightCard
           data={data11}
           Title="Map vs Object"
           Subheader="Use Map Object instead of plain object when needed to declare diffrent type of key
           "
-          explanation="In JavaScript, we can use 𝐎𝐛𝐣𝐞𝐜𝐭.𝐟𝐫𝐞𝐞𝐳𝐞() and 𝐎𝐛𝐣𝐞𝐜𝐭.𝐬𝐞𝐚𝐥() methods to make an object immutable.
+          explanation="
+          Normally when we assign number as key in object automatically it convert to string. We call this coercion. But if we dont want to this we can use Map object. And it has built in functions. Map guarentee order of key-value pairs but not objects. But objects can send to backend directly with axios but not map. 
           "
         />
       </Grid>
