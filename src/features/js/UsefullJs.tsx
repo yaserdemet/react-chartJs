@@ -52,18 +52,27 @@ function UsefullJs() {
   }
 
   useEffect(() => {
+    const getUsersCity = async (latitude : number, longitude : number) => {
+      const url = "https://nominatim.openstreetmap.org/reverse?format=json&";
+      const params = new URLSearchParams({
+        lat: String(latitude),
+        lon: String(longitude),
+      });
+  
+      try {
+        const response = await axiosInstance.get(`${url}${params}`);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching city:", error);
+      }
+    };
+  
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position: any) => {
-        console.log(position);
+      navigator.geolocation.getCurrentPosition((position) => {
+        // console.log(position);
         const { latitude, longitude } = position.coords;
-        console.log(latitude, longitude);
-        const getUsersCity = async () => {
-          const data = await axiosInstance.get(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-          );
-          console.log(data);
-          getUsersCity();
-        };
+        // console.log(latitude, longitude);
+        getUsersCity(latitude, longitude);
       });
     } else {
       alert('Your browser does not support geolocationApi');
