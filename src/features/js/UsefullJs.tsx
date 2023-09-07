@@ -238,7 +238,6 @@ function UsefullJs() {
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             ) it response user's city and region"
         />
-        
       </Grid>
     </>
   );
