@@ -232,18 +232,18 @@ export const data12 = [
     id: 12,
     label: `
 useEffect(() => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position: any) => {
-      console.log(position);
-      const { latitude, longitude } = position.coords;
-      console.log(latitude, longitude);
-      const getUsersCity = async () => {
-        const data = await axiosInstance.get(
-          https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}
-          );
-          console.log(data);
-          getUsersCity();
-        };
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition((position: any) => {
+  console.log(position);
+  const { latitude, longitude } = position.coords;
+  console.log(latitude, longitude);
+  const getUsersCity = async () => {
+  const data = await axiosInstance.get(
+    https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}
+      );
+      console.log(data);
+      getUsersCity();
+      };
       });
   } else {
     alert('Your browser does not support geolocationApi');

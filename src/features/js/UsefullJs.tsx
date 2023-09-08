@@ -232,8 +232,8 @@ function UsefullJs() {
         />
         <HighlightCard
           data={data12}
-          Title="How to Users Location"
-          Subheader="By using navigator.geolocaiton api"
+          Title="How to Get Users Location"
+          Subheader="Use navigator.geolocation to get user's latitude and longtitude"
           explanation="With navigotor.geolocation we can get user's latitude and longtitude. By sending as parametre these data to the this public api (
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             ) it response user's city and region"
