@@ -18,6 +18,7 @@ import {
   data,
   data10,
   data11,
+  data12,
   data2,
   data3,
   data4,
@@ -29,6 +30,7 @@ import {
   env,
 } from './datas';
 import { IJs } from './types/js-types';
+import axiosInstance from 'src/utils/axios';
 
 function UsefullJs() {
   useEffect(() => {
@@ -50,14 +52,23 @@ function UsefullJs() {
   }
 
   useEffect(() => {
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition((position : any) => {
-          console.log(position);
-          // const {latitude, longtitude} = position.coords
-          // console.log(latitude, longtitude);
-        })
-      }
-  }, [])
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: any) => {
+        console.log(position);
+        const { latitude, longitude } = position.coords;
+        console.log(latitude, longitude);
+        const getUsersCity = async () => {
+          const data = await axiosInstance.get(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+          );
+          console.log(data);
+          getUsersCity();
+        };
+      });
+    } else {
+      alert('Your browser does not support geolocationApi');
+    }
+  }, []);
 
   return (
     <>
@@ -218,6 +229,14 @@ function UsefullJs() {
           explanation="
           Normally when we assign number as key in object automatically it convert to string. We call this coercion. But if we dont want to this we can use Map object. And it has built in functions. Map guarentee order of key-value pairs but not objects. But objects can send to backend directly with axios but not map. 
           "
+        />
+        <HighlightCard
+          data={data12}
+          Title="How to Users Location"
+          Subheader="By using navigator.geolocaiton api"
+          explanation="With navigotor.geolocation we can get user's latitude and longtitude. By sending as parametre these data to the this public api (
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+            ) it response user's city and region"
         />
       </Grid>
     </>
