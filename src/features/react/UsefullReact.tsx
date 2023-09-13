@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2, data3, data4, data5, data6 } from './data';
+import { data, data2, data3, data4, data5, data6, data7, data8 } from './data';
 
 function UsefullReact() {
   useEffect(() => {
@@ -59,6 +59,19 @@ function UsefullReact() {
           Title="Why do we need a callback in setState?"
           Subheader="To ensure state update correctly use callback inside setState"
           explanation="In the case of the function argument, it can be useful to use a callback function with setState to ensure that the state update is performed correctly. This is because setState may update the state asynchronously, and if you need to perform some action that depends on the state being updated immediately after calling setState, you cannot rely on the state to have been updated yet.."
+        />
+        <HighlightCard
+          data={data7}
+          Title="React Batch Update"
+          Subheader="State update and use its current value in another function"
+          explanation="In React, setState is asynchronous, which means when you call setState, it does not immediately update the state. Instead, React batches these updates to optimize performance, and the new state value is not immediately accessible right after a setState call."
+        />
+
+        <HighlightCard
+          data={data8}
+          Title="Update all inputs with one function"
+          Subheader="Dont create function to all input just send"
+          explanation="In React, setState is asynchronous, which means when you call setState, it does not immediately update the state. Instead, React batches these updates to optimize performance, and the new state value is not immediately accessible right after a setState call."
         />
       </Grid>
     </>

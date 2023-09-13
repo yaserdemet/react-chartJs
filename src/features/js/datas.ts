@@ -253,25 +253,7 @@ navigator.geolocation.getCurrentPosition((position: any) => {
   },
 ];
 
-export const data13 = [
-  {
-    id: 13,
-    label: `
-const myFunction = () => {
-  setCount(count + 1)
-  anotherFunction(count)
-}
-// In here we dont send updated count to anotherFunction. Still it has previous count
-// To prevent this use like this
 
-const refactoredFunction = () => {
-  const updateCount = count + 1;
-  setCount(updateCount);
-  anotherFunction(updateCount)
-}
-  `,
-  },
-];
 
 export const config = `
 {

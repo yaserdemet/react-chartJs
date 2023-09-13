@@ -198,3 +198,53 @@ const addItem = (newItem) => {
 `,
   },
 ];
+
+export const data7 = [
+  {
+    id: 7,
+    label: `
+const myFunction = () => {
+  setCount(count + 1)
+  anotherFunction(count)
+}
+// In here we dont send updated count to anotherFunction. Still it has previous count
+// To prevent this use like this
+
+const refactoredFunction = () => {
+  const updateCount = count + 1;
+  setCount(updateCount);
+  anotherFunction(updateCount)
+}
+  `,
+  },
+];
+
+export const data8 = [
+  {
+    id: 8,
+    label: `
+    const [state, setState] = useState({
+      input1: "",
+      input2: "",
+      input3: ""
+    });
+  
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setState(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    };
+
+    <input 
+    name="input1"
+    value={state.input1}
+    onChange={handleInputChange}
+    placeholder="Input 1"
+  />
+
+  // ... Other inputs
+  `,
+  },
+];
