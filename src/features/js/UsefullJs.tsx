@@ -251,7 +251,7 @@ function UsefullJs() {
         <HighlightCard
           data={data13}
           Title="React Batch Update"
-          Subheader="Use navigator.geolocation to get user's latitude and longtitude"
+          Subheader="State update and use its current value in another function"
           explanation="In React, setState is asynchronous, which means when you call setState, it does not immediately update the state. Instead, React batches these updates to optimize performance, and the new state value is not immediately accessible right after a setState call."
         />
       </Grid>
