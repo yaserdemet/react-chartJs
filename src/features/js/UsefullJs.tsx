@@ -19,6 +19,7 @@ import {
   data10,
   data11,
   data12,
+  data13,
   data2,
   data3,
   data4,
@@ -52,21 +53,21 @@ function UsefullJs() {
   }
 
   useEffect(() => {
-    const getUsersCity = async (latitude : number, longitude : number) => {
-      const url = "https://nominatim.openstreetmap.org/reverse?format=json&";
+    const getUsersCity = async (latitude: number, longitude: number) => {
+      const url = 'https://nominatim.openstreetmap.org/reverse?format=json&';
       const params = new URLSearchParams({
         lat: String(latitude),
         lon: String(longitude),
       });
-  
+
       try {
         const response = await axiosInstance.get(`${url}${params}`);
         console.log(response.data);
       } catch (error) {
-        console.error("Error fetching city:", error);
+        console.error('Error fetching city:', error);
       }
     };
-  
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         // console.log(position);
@@ -246,6 +247,12 @@ function UsefullJs() {
           explanation="With navigotor.geolocation we can get user's latitude and longtitude. By sending as parametre these data to the this public api (
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             ) it response user's city and region"
+        />
+        <HighlightCard
+          data={data13}
+          Title="React Batch Update"
+          Subheader="Use navigator.geolocation to get user's latitude and longtitude"
+          explanation="In React, setState is asynchronous, which means when you call setState, it does not immediately update the state. Instead, React batches these updates to optimize performance, and the new state value is not immediately accessible right after a setState call."
         />
       </Grid>
     </>
