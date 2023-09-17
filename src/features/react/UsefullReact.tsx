@@ -1,6 +1,6 @@
 import { Button, Grid } from '@mui/material';
 import { HighlightCard } from 'src/components/usefullFrontendCard/HighlightCard';
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -15,8 +15,114 @@ function UsefullReact() {
       Prism.highlightAllUnder(document, false);
     };
   }, []);
+
+  const [isInView, setIsInView] = useState(false);
+  console.log(isInView);
+  const myRef = useRef<any>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+      setIsInView(entry.isIntersecting)
+    });
+    observer.observe(myRef.current)
+    
+
+  }, []);
+const appliedStyle = isInView ? fadeInStyle : initialStyle;
+
   return (
     <>
+      <div>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+       
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p>
+          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
+          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
+        </p>
+        <p className={isInView ? 'fade-in' : ''}  style={appliedStyle} ref={myRef}>
+          MDAWDAWDAWDWA
+        </p>
+      </div>
       <Grid container spacing={4}>
         <HighlightCard
           data={data}
@@ -86,3 +192,18 @@ function UsefullReact() {
 }
 
 export default UsefullReact;
+
+const initialStyle = {
+  backgroundColor: 'red',
+  color: 'white',
+  padding : 12,
+  opacity: 0,
+  transform: 'translateX(-250px)', // This will start the content 50px above its initial position
+  transition: 'opacity 1s, transform 1s'
+};
+
+const fadeInStyle = {
+  ...initialStyle,
+  opacity: 1,
+  transform: 'translateX(0)'
+};

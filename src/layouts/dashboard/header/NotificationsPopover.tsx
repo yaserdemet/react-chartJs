@@ -36,9 +36,7 @@ export default function NotificationsPopover() {
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
   const dispatch = useDispatch();
   const count = useSelector((state: any) => state.counter.value);
-  console.log(count);
   const commnet = useSelector((state : any) => state.comment.value)
-  console.log(commnet);
   const [notifications, setNotifications] = useState(_notifications);
   // const { totalUnRead, onClickBadge } = useStore();
 
