@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2, data3, data4, data5, data6, data7, data8 } from './data';
+import { data, data2, data3, data4, data5, data6, data7, data8, data9 } from './data';
 
 function UsefullReact() {
   useEffect(() => {
@@ -72,6 +72,13 @@ function UsefullReact() {
           Title="Update all inputs with one function"
           Subheader="Dont create function to all input just send"
           explanation="In React, setState is asynchronous, which means when you call setState, it does not immediately update the state. Instead, React batches these updates to optimize performance, and the new state value is not immediately accessible right after a setState call."
+        />
+
+        <HighlightCard
+          data={data9}
+          Title="Auto Scrool With useRef Hook"
+          Subheader="Dont create function to all input just send"
+          explanation="When added new item in your list, even if scroll below of page to show the item which added last one go top of page with smooth scroll by using useRef hook "
         />
       </Grid>
     </>
