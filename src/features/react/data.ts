@@ -295,6 +295,9 @@ export const data10 = [
       });
       observer.observe(myRef.current);
     }, []);
+
+    // in jsx;
+    <div  style={isInView ? x : y} ref={myRef} />
   `,
   },
 ];

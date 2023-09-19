@@ -16,17 +16,17 @@ function UsefullReact() {
     };
   }, []);
 
-  const [isInView, setIsInView] = useState(false);
-  console.log(isInView);
-  const myRef = useRef<any>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsInView(entry.isIntersecting);
-    });
-    observer.observe(myRef.current);
-  }, []);
-  const appliedStyle = isInView ? fadeInStyle : initialStyle;
+  // const [isInView, setIsInView] = useState(false);
+  // const myRef = useRef<any>(null);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     setIsInView(entry.isIntersecting);
+  //   });
+  //   observer.observe(myRef.current);
+  // }, []);
+  // const appliedStyle = isInView ? fadeInStyle : initialStyle;
+
 
   return (
     <>
@@ -90,18 +90,18 @@ function UsefullReact() {
         <HighlightCard
           data={data9}
           Title="Auto Scrool With useRef Hook"
-          Subheader="Dont create function to all input just send"
+          Subheader=""
           explanation="When added new item in your list, even if scroll below of page to show the item which added last one go top of page with smooth scroll by using useRef hook "
         />
-        <Box  style={appliedStyle} ref={myRef}>
+        {/* <Box  style={appliedStyle} ref={myRef}> */}
 
         <HighlightCard
           data={data10}
           Title="Intersection Observer Api"
-          Subheader="Dont create function to all input just send"
+          Subheader=""
           explanation="To trigger some event or animation just in user's in view user Intersection Observer Api. This take callback fucntion. And can caught in view or not."
         />
-        </Box>
+        {/* </Box> */}
       </Grid>
     </>
   );
@@ -110,7 +110,8 @@ function UsefullReact() {
 export default UsefullReact;
 
 const initialStyle = {
-  backgroundColor: 'red',
+  dispay : "inline",
+  backgroundColor: 'inherit',
   color: 'white',
   padding: 12,
   opacity: 0,
