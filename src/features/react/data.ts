@@ -248,3 +248,42 @@ export const data8 = [
   `,
   },
 ];
+
+export const data9 = [
+  {
+    id: 9,
+    label: `
+      const [items, setItems] = useState(['Item 1', 'Item 2', 'Item 3']);
+      const containerRef = useRef(null);
+    
+      const addItem = () => {
+        setItems(prevItems => ['New Item', ...prevItems]);
+    
+        if (containerRef.current) {
+          containerRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }
+      };
+    
+      return (
+        <div>
+          <button onClick={addItem}>Add New Item</button>
+    
+          <div 
+            ref={containerRef} 
+            style={{ height: '200px', overflowY: 'scroll', border: '1px solid black' }}
+          >
+            {items.map(item => (
+              <div key={item}>{item}</div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    
+  `,
+  },
+];
+
