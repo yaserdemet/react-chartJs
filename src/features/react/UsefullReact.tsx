@@ -1,10 +1,10 @@
-import { Button, Grid } from '@mui/material';
+import { Button, Grid, Box } from '@mui/material';
 import { HighlightCard } from 'src/components/usefullFrontendCard/HighlightCard';
 import React, { useRef, useEffect, useState } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { data, data2, data3, data4, data5, data6, data7, data8, data9 } from './data';
+import { data, data10, data2, data3, data4, data5, data6, data7, data8, data9 } from './data';
 
 function UsefullReact() {
   useEffect(() => {
@@ -21,108 +21,15 @@ function UsefullReact() {
   const myRef = useRef<any>(null);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0]
-      setIsInView(entry.isIntersecting)
+      const entry = entries[0];
+      setIsInView(entry.isIntersecting);
     });
-    observer.observe(myRef.current)
-    
-
+    observer.observe(myRef.current);
   }, []);
-const appliedStyle = isInView ? fadeInStyle : initialStyle;
+  const appliedStyle = isInView ? fadeInStyle : initialStyle;
 
   return (
     <>
-      <div>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-       
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p>
-          Lorem, ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia minima
-          temporibus illum aspernatur fugiat dolor maxime nisi rerum praesentium?
-        </p>
-        <p className={isInView ? 'fade-in' : ''}  style={appliedStyle} ref={myRef}>
-          MDAWDAWDAWDWA
-        </p>
-      </div>
       <Grid container spacing={4}>
         <HighlightCard
           data={data}
@@ -186,6 +93,15 @@ const appliedStyle = isInView ? fadeInStyle : initialStyle;
           Subheader="Dont create function to all input just send"
           explanation="When added new item in your list, even if scroll below of page to show the item which added last one go top of page with smooth scroll by using useRef hook "
         />
+        <Box  style={appliedStyle} ref={myRef}>
+
+        <HighlightCard
+          data={data10}
+          Title="Intersection Observer Api"
+          Subheader="Dont create function to all input just send"
+          explanation="To trigger some event or animation just in user's in view user Intersection Observer Api. This take callback fucntion. And can caught in view or not."
+        />
+        </Box>
       </Grid>
     </>
   );
@@ -196,14 +112,14 @@ export default UsefullReact;
 const initialStyle = {
   backgroundColor: 'red',
   color: 'white',
-  padding : 12,
+  padding: 12,
   opacity: 0,
   transform: 'translateX(-250px)', // This will start the content 50px above its initial position
-  transition: 'opacity 1s, transform 1s'
+  transition: 'opacity 1s, transform 1s',
 };
 
 const fadeInStyle = {
   ...initialStyle,
   opacity: 1,
-  transform: 'translateX(0)'
+  transform: 'translateX(0)',
 };

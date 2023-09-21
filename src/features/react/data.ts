@@ -280,3 +280,21 @@ return (
   `,
   },
 ];
+
+export const data10 = [
+  {
+    id: 10,
+    label: `
+    const [isInView, setIsInView] = useState(false);
+  
+    const myRef = useRef(null);
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        setIsInView(entry.isIntersecting);
+      });
+      observer.observe(myRef.current);
+    }, []);
+  `,
+  },
+];
