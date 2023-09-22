@@ -329,8 +329,36 @@ export const data11 = [
 
 
     const params = useParams()
+    const id = params?.id
     // This give us parametre in url. We can get dynamic parametre.
+    <Link to="posts/1"> Post-1 </Link> Absolute path
+    <Link to="1"> Post-1 </Link> =>  Relative path
+
     <Route path="/posts/:id" element={<Posts />}
+
+
+    const location = useLocation()
+    // With this hook we can get data from url.
+    <button onClick={() => {navigate("/users", {state : {data}})}}>
+    // We can send data in state object.
+
+    // Nested Routes.
+      <Routes>
+            <Route path="/home" element={ <Home />} >
+              < Route path="/about" element={<About />} />
+              < Route path="/contact" element={<Contact />} />
+            </Route>
+        </Routes>
+    // in your Home Page
+
+    const Home = () => {
+        return (
+          <>
+              <Outlet /> => outlet route ta ki childrenları göster demektir.
+          </>
+        )
+    }
+    export default Home;
 
   `,
   },
