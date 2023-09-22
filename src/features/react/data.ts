@@ -323,6 +323,15 @@ export const data11 = [
     
     // Another approach to styling default give .active class. We can add our style this in CSS.
 
+    // React-Router-Dom Hooks
+    const navigate = useNavigate()
+    <button onClick={() => navigate(-1)}
+
+
+    const params = useParams()
+    // This give us parametre in url. We can get dynamic parametre.
+    <Route path="/posts/:id" element={<Posts />}
+
   `,
   },
 ];
