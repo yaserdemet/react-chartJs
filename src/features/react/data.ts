@@ -307,16 +307,22 @@ export const data11 = [
     id: 11,
     label: `
     import {BroserRouter, Routes, Route} from "react-router-dom"
-
     <BrowserRouter>
     <Navbar /> navbar and footer will be shown in every page. Cuz in dont put in Routes
         <Routes>
             <Route path="/about" element={ <About />} />
             <Route path="*" element={ <NotFoundPage />} />
-
         </Routes>
         <Footer />
     </BrowserRouter>
+
+    // in your component.
+    import {NavLink, Link} from "react-router-dom";
+    with NavLink we can access active page and style our Link.
+    <NavLink  style={({isActive}) => ({color : isActive ? "red" : "purple"}) } to="/about" />
+    
+    // Another approach to styling default give .active class. We can add our style this in CSS.
+
   `,
   },
 ];
