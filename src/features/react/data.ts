@@ -312,6 +312,8 @@ export const data11 = [
     <Navbar /> navbar and footer will be shown in every page. Cuz in dont put in Routes
         <Routes>
             <Route path="/about" element={ <About />} />
+            <Route path="*" element={ <NotFoundPage />} />
+
         </Routes>
         <Footer />
     </BrowserRouter>
