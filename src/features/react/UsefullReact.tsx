@@ -27,7 +27,6 @@ function UsefullReact() {
   // }, []);
   // const appliedStyle = isInView ? fadeInStyle : initialStyle;
 
-
   return (
     <>
       <Grid container spacing={4}>
@@ -101,6 +100,13 @@ function UsefullReact() {
           Subheader=""
           explanation="To trigger some event or animation just in user's in view user Intersection Observer Api. This take callback fucntion. And can caught in view or not."
         />
+
+        <HighlightCard
+          data={data10}
+          Title="React Reouter Dom"
+          Subheader="How to Use React Router Dom"
+          explanation="When can access browser's history by covering all our app with <BrowserRouter>. Then define all path <Routes> <Route to='/about' element={</About /> }"
+        />
         {/* </Box> */}
       </Grid>
     </>
@@ -110,7 +116,7 @@ function UsefullReact() {
 export default UsefullReact;
 
 const initialStyle = {
-  dispay : "inline",
+  dispay: 'inline',
   backgroundColor: 'inherit',
   color: 'white',
   padding: 12,

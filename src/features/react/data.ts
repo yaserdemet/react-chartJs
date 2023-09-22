@@ -301,3 +301,20 @@ export const data10 = [
   `,
   },
 ];
+
+export const data11 = [
+  {
+    id: 11,
+    label: `
+    import {BroserRouter, Routes, Route} from "react-router-dom"
+
+    <BrowserRouter>
+    <Navbar /> navbar and footer will be shown in every page. Cuz in dont put in Routes
+        <Routes>
+            <Route path="/about" element={ <About />} />
+        </Routes>
+        <Footer />
+    </BrowserRouter>
+  `,
+  },
+];
