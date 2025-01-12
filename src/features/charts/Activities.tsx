@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ApexCharts from 'apexcharts';
 import { _analyticTraffic } from 'src/_mock/arrays';
 import { Grid, Card, Typography, Stack, Icon } from '@mui/material';
 import Chart from 'react-apexcharts';

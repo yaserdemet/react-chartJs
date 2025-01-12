@@ -2,8 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { Container, Typography, Box, Stack, TextField, Tooltip, Skeleton } from '@mui/material';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { useBattery } from 'react-use';
 // components
@@ -85,10 +83,9 @@ export default function PageFive() {
     },
     {
       id: 3,
-      tool: 'dax',
+      tool: 'The time remaining in seconds until the battery is completely discharged. If the battery is currently charging or the discharging time is unknown, this value will be Infinity.',
     },
   ];
-
   return (
     <>
       <Helmet>
