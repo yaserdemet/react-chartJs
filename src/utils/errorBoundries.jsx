@@ -53,7 +53,9 @@ class ErrorBoundary extends React.Component {
             </m.div>
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={() => window.history.back()} size="large" variant="contained">
+              <Button onClick={() => {
+                window.location.href = '/dashboard';
+              }} size="large" variant="contained">
                 Go to Home
               </Button>
             </div>
