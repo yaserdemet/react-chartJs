@@ -11,16 +11,27 @@ const Activities = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
-    setTimeout(() => {
-      enqueueSnackbar(
-        <>
-          <Iconify sx={{ mr: 1 }} icon="emojione:cookie" /> We use cookies to improve your browsing
-          experience,{' '}
-        </>,
-        { variant: 'info' }
-      );
-    }, 4096);
-  });
+    const key = 'cookieSnackbarShown';
+    try {
+      const shown = localStorage.getItem(key);
+      if (!shown) {
+        const id = window.setTimeout(() => {
+          enqueueSnackbar(
+            <>
+              <Iconify sx={{ mr: 1 }} icon="emojione:cookie" /> We use cookies to improve your browsing
+              experience,{' '}
+            </>,
+            { variant: 'info' }
+          );
+          localStorage.setItem(key, 'true');
+        }, 4096);
+
+        return () => clearTimeout(id);
+      }
+    } catch (e) {
+      
+    }
+  }, [enqueueSnackbar]);
   const options = {
     xaxis: {
       categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
