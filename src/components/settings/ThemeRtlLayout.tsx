@@ -22,8 +22,8 @@ export default function ThemeRtlLayout({ children }: Props) {
   }, [theme.direction]);
 
   const cacheRtl = createCache({
-    key: theme.direction === 'rtl' ? 'rtl' : 'css',
-    stylisPlugins: theme.direction === 'rtl' ? [prefixer, rtlPlugin] : [],
+    key: theme.direction === 'rtl' ? 'css' : 'css',
+    stylisPlugins: theme.direction === 'rtl' ? [prefixer] : [],
   });
 
   return <CacheProvider value={cacheRtl}>{children}</CacheProvider>;
