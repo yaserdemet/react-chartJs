@@ -7,6 +7,7 @@ import useOffSetTop from '../../hooks/useOffSetTop';
 import { HEADER } from '../../config-global';
 //
 import Header from './Header';
+import Footer from '../../components/Footer';
 
 // ----------------------------------------------------------------------
 
@@ -31,6 +32,7 @@ export default function CompactLayout() {
           <Outlet />
         </Stack>
       </Container>
+      <Footer />
     </>
   );
 }
